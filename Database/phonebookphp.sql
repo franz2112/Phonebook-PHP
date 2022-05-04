@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2022 at 03:35 PM
+-- Generation Time: May 04, 2022 at 04:42 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.28
 
@@ -33,6 +33,19 @@ CREATE TABLE `phonebook` (
   `mobile` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Indexes for dumped tables
 --
@@ -44,6 +57,12 @@ ALTER TABLE `phonebook`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -51,6 +70,12 @@ ALTER TABLE `phonebook`
 -- AUTO_INCREMENT for table `phonebook`
 --
 ALTER TABLE `phonebook`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
