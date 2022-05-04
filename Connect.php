@@ -9,3 +9,7 @@ if (!$con)
 
 
 ?>
+
+
+ <!-- Required meta tags -->
+ 
