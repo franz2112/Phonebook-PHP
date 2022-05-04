@@ -10,7 +10,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<title>CRUD Display</title>
+	<title>Display</title>
 	<link rel="stylesheet" href="css/CSS.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
@@ -20,14 +20,20 @@
       <CENTER>
     <header id="main">
         <br>
-            <h1> <b> C R U D &nbsp P R O J E C T </b></h1>
+            <h1> <b> ASEAN  PHONEBOOK </b></h1>
         <br>
     </header>
     <nav>
         <ul>
-            <li><a href="index.php">REGISTER</a></li>
+            <li><a href="index.php">REGISTER</i></a></li> 
+            <li> | </li>
+            <li><a href="display.php">EDIT</a></li>
             <li> | </li>
             <li><a href="display.php">DISPLAY</a></li>
+            <li> | </li>
+            <li><a href="index.php">DELETE</i></a></li> 
+            <li> | </li>
+            <li><a href="display.php">EXIT</a></li>
         </ul>
     </nav>
   </CENTER>

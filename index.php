@@ -46,21 +46,27 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>CRUD Index</title>
+    <title>Index</title>
   </head>
   <body style="background-color: #ffe2c9;">
     <div id="container">
       <CENTER>
     <header id="main">
         <br>
-            <h1> <b> C R U D &nbsp P R O J E C T </b></h1> 
+            <h1> <b> ASEAN PHONEBOOK </b></h1> 
         <br>
     </header>
     <nav>
         <ul>
             <li><a href="index.php">REGISTER</i></a></li> 
             <li> | </li>
+            <li><a href="display.php">EDIT</a></li>
+            <li> | </li>
             <li><a href="display.php">DISPLAY</a></li>
+            <li> | </li>
+            <li><a href="index.php">DELETE</i></a></li> 
+            <li> | </li>
+            <li><a href="display.php">EXIT</a></li>
         </ul>
     </nav>
   </CENTER>
