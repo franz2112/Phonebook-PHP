@@ -20,3 +20,7 @@ function menuBtnChange() {
    closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
  }
 }
+//Script for VIDEO
+// Get the video
+var video = document.getElementById("myVideo");
+//End Script for VIDEO BG
