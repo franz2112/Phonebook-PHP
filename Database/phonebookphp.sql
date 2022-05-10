@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2022 at 04:42 PM
+-- Generation Time: May 10, 2022 at 06:32 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.28
 
@@ -36,6 +36,30 @@ CREATE TABLE `phonebook` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `store`
+--
+
+CREATE TABLE `store` (
+  `idnumber` varchar(255) NOT NULL,
+  `surname` varchar(255) NOT NULL,
+  `firstname` varchar(255) NOT NULL,
+  `occupation` varchar(255) NOT NULL,
+  `gender` enum('male','female') NOT NULL,
+  `countrycode` int(10) NOT NULL,
+  `areacode` int(10) NOT NULL,
+  `mobilenumber` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `store`
+--
+
+INSERT INTO `store` (`idnumber`, `surname`, `firstname`, `occupation`, `gender`, `countrycode`, `areacode`, `mobilenumber`) VALUES
+('0211', 'Tuazon', ' Fritz', 'IT', 'male', 63, 9506, '09105344829');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -55,6 +79,12 @@ CREATE TABLE `users` (
 --
 ALTER TABLE `phonebook`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `store`
+--
+ALTER TABLE `store`
+  ADD PRIMARY KEY (`idnumber`);
 
 --
 -- Indexes for table `users`
