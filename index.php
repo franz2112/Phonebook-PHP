@@ -129,14 +129,16 @@
               <div class="main-text">
                   <!-- <img src="https://html.sammy-codes.com/images/small-profile.jpeg" class="main-page"> -->
                   <h1>THE ASEAN STUDENT PHONEBOOK</h1>
-
-                  <div class="container">
-                      <p class="text-white">Southeast Asia has 11 countries. If you have a classmate or schoolmate from this area, and you
-want to contact him, you can make an international call. Typically, to make that call, the country
-code has first to be dialled before the actual telephone number. Take note of the following
-ASEAN countries with their corresponding country codes.</p>
-                  </div>
+                  <div class="container ">
+                    <div class="bg-meaning">
+                        <p>Southeast Asia has 11 countries. If you have a classmate or schoolmate from this area, and you
+    want to contact him, you can make an international call. Typically, to make that call, the country
+    code has first to be dialled before the actual telephone number. Take note of the following
+    ASEAN countries with their corresponding country codes.</p>
+                    </div>
+                    
               </div>
+              
           </div>
 
            <!-- Footer -->

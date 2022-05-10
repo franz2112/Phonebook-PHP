@@ -254,12 +254,12 @@ h1{
   width: calc(100% - 250px);
   
 }
-.home-section .text{
+.home-section .main-text{
   display: inline-block;
   color: #11101d;
   font-size: 25px;
   font-weight: 500;
-  margin: 18px
+  padding-top: 20px;
 }
 .main-page{
   height:150px; 
@@ -270,16 +270,23 @@ h1{
   font-size:65px; 
   color:white;
   /* color:#66fcf1;  */
-  margin:10px;
+  margin-bottom: 30px;
 }
 .main-text p{
-  font-size:30px; 
-  color: black;
-  font-style: italic;
+  font-size:13pt;
+  font-weight: lighter;
+  text-align: justify;
+  color: white;
 }
 .main-text p a{
   font-size: 20px; 
   color:#1F9AFE;
+}
+.bg-meaning{
+  width: 400px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(37, 36, 36, 0.7);
 }
 footer{
   margin-top: 330px;
