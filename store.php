@@ -154,7 +154,21 @@
                     <br>
                     <div class="form-group">
                         <label> Country Code</label> <label class="indent">Area Code </label> <br>
-                        <input type="int" required="required" class="text-area3" placeholder="Enter Country Code" name="countrycode">
+                        <select type="dropdown" required="required" class="text-area3" name="countrycode">
+                              <option selected>-Select Country Code-</option>
+                              <option value="60">Malaysia - 60</option>
+                              <option value="62">Indonesia - 62</option>
+                              <option value="63">Philippines - 63</option>
+                              <option value="65">Singapore - 65</option>
+                              <option value="66">Thailand - 66</option>
+                              <option value="84">Vietnam - 84</option>
+                              <option value="673">Brunei Darussalam - 673</option>
+                              <option value="855">Cambodia - 855</option>
+                              <option value="856">Lao - 856</option>
+                              <option value="95">Myanmar - 95</option>
+                              <option value="670">Timor Leste - 670</option>
+
+                        </select>
                         <input type="int" required="required" class="text-area3" placeholder="Enter Area Code" name="areacode">
                     </div>
                     <br>

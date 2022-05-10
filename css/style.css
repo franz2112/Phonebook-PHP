@@ -355,7 +355,9 @@ h1{
   border-radius: 10px;
   background: rgba(25,134,84,255);
 }
-
+option{
+  color: black;
+}
 footer{
   margin-top: 100px;
 }
