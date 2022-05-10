@@ -10,79 +10,180 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
 	<title>Display</title>
+
 	<link rel="stylesheet" href="css/CSS.css">
+
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <style><?php include 'css/style.css'; ?></style>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Boxicons CDN Link -->
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+  <script src="https://kit.fontawesome.com/6a478048bc.js" crossorigin="anonymous"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body style="background-color: #ffe2c9;">
+  
+  <video autoplay muted loop class="myVideo">
+    <source src="bg1.mp4" type="video/mp4">
+  </video>
+  <!--End of Video BG-->
+  <div class="container">
+    <div class="sidebar">
+        <div class="logo-details">
+          <i class="fa-solid fa-0 icon"></i>
+            <div class="logo_name">PHONEBOOK</div>
+          <i class='bx bx-menu' id="btn" ></i>
+        </div>
+          <ul class="nav-list-1">
+            <li>
+              <a href="index.php" active>
+                <i class="fa-solid fa-home"></i>                        
+                <span class="links_name">Home</span>
+              </a>
+              <span class="tooltip">Home</span>
+            </li>
+            <li>
+              <a href="store.php">
+                  <i class="fa-solid fa-box-archive"></i>                        
+                  <span class="links_name">Store</span>
+              </a>
+              <span class="tooltip">Store</span>
+            </li>
+            <li>
+              <a href="edit.php">
+                    <i class="fa-solid fa-pen"></i>
+                    <span class="links_name">Edit</span>
+              </a>
+              <span class="tooltip">Edit</span>
+            </li>
+            <li>
+              <a href="#">
+                  <i class="fa-solid fa-trash-can"></i>
+                  <span class="links_name">Delete</span>
+              </a>
+              <span class="tooltip">Delete</span>
+            </li>
+            <li>
+              <a href="viewsearch.php">
+                  <i class="fa-solid fa-magnifying-glass"></i>                        
+                  <span class="links_name">View/Search</span>
+              </a>
+              <span class="tooltip">View/Search</span>
+            </li>
+            <li>
+              <a href="#">
+                  <i class="fa-solid fa-door-open"></i>                      
+                  <span class="links_name">Exit</span>
+              </a>
+              <span class="tooltip">Exit</span>
+            </li>
+          </ul>
+    </div>
+  </div>  
+  <section class="home-section">
+          <!-- main page -->
+          <div class="container pt-5">
+      <div class="bg-color">
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+                <!-- <th scope="col">Password</th> -->
+                <th scope="col">Mobile</th>
+                <th scope="col">Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php
+              $sql="Select * from  `crud`";
+              $selectresult=mysqli_query($con, $sql);
+              $i=1;
+              if($selectresult){
+                while($row=mysqli_fetch_assoc($selectresult)){
+                  $id=$row['id'];
+                  $username=$row['username'];
+                  $email=$row['email'];
+                  // $password=$row['password'];
+                  $mobile=$row['mobile'];
+                  echo '
+                  <tr>
+                    <th scope="row">'.$id.'</th>
+                    <td>'.$username.'</td>
+                    <td>'.$email.'</td>
+                    <td>'.$mobile.'</td>
+                    <td >
+                      <a href="Update.php?updateid='.$id.'" class="btn btn-success" >Update</a>
+                      <a href="Delete.php?deleteid='.$id.'" class="btn btn-danger" >Delete</a>
+                    </td>
+                  </tr>
+                  ';
+                  $i++;
+                }
+              }
+              else{
+                die(mysql_error($con));
+              }
+            ?>
+            </tbody>
+        </table>
+        <a href="index.php" class="btn btn-primary">Add User</a>
+      </div>  
+    </div>
 
-	<div id="container">
-      <CENTER>
-    <header id="main">
-        <br>
-            <h1> <b> ASEAN  PHONEBOOK </b></h1>
-        <br>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.php">REGISTER</i></a></li> 
-            <li> | </li>
-            <li><a href="display.php">EDIT</a></li>
-            <li> | </li>
-            <li><a href="display.php">DISPLAY</a></li>
-            <li> | </li>
-            <li><a href="index.php">DELETE</i></a></li> 
-            <li> | </li>
-            <li><a href="display.php">EXIT</a></li>
-        </ul>
-    </nav>
-  </CENTER>
-
-<div style="overflow-y: scroll; height: 300px;" class="container my-5">
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Username</th>
-      <th scope="col">Email</th>
-      <th scope="col">Mobile Number</th>
-      <th scope="col"><center>Operations</center></th> 
-    </tr>
-  </thead>
-  <tbody>
-</div>
-</div>
-<?php
-
-$select_query="Select * from crud";
-$result=mysqli_query($con,$select_query);
-$i=1;
-if($result){
-   while ($row=mysqli_fetch_assoc($result)) {
-    $id=$row['id'];
-   	 $username=$row['username'];
-   	 $email=$row['email'];
-   	 $mobile=$row['mobile'];
-   	 echo " <tr> 
-     <td> $i </td>
-     <td> $username </td>
-     <td> $email </td>
-     <td> $mobile </td>
-     <td class='text-center'>
-     <button class='btn btn-success'> <a href='update.php?update_id=$id' class='text-light text-decoration-none'>Update</button>
-     <button class='btn btn-danger'><a href='delete.php?deleteid=$id' class='text-light text-decoration-none'> Delete </button>
-     </td>
-     </tr>";
-    $i++;
-   }
-}else{
-    die(mysqli_error($con));
-   }
-
-?>
-
-  </tbody>
-</table> 
+           <!-- Footer -->
+           <footer class="text-center text-lg-start text-white">
+              <!-- Grid container -->
+                  <div class="container p-1 pb-1">
+                      <hr class="my-4">
+                      <!-- Section: Copyright -->
+                      <section class="p-1 pt-1">
+                          <div class="row d-flex align-items-center">
+                              <!-- Grid column -->
+                              <div class="col-md-7 col-lg-8 text-center text-md-start">
+                              <!-- Copyright -->
+                              <div>
+                                  © 2022 Copyright:
+                                  <a class="text-white" href="profile.php">Solmayor & Tuazon</a>
+                              </div>
+                             <!-- Copyright -->
+                              </div>
+              
+                              <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+                              <!-- Facebook -->
+                                  <a href="https://web.facebook.com/nexusapplert" class="btn btn-outline-light btn-floating m-1 text-white" role="button" >
+                                      <i class="fab fa-facebook-f"></i>
+                                  </a>
+                              <!-- Twitter -->
+                                  <a class="btn btn-outline-light btn-floating m-1 text-white" role="button">
+                                      <i class="fab fa-twitter"></i>
+                                  </a>
+                             <!-- Google -->
+                                  <a class="btn btn-outline-light btn-floating m-1 text-white" role="button">
+                                  <i class="fab fa-google"></i>
+                                  </a>
+                              <!-- Instagram -->
+                                  <a class="btn btn-outline-light btn-floating m-1 text-white" role="button">
+                                  <i class="fab fa-instagram"></i>
+                                  </a>
+                              </div>
+                  
+                          </div>
+                     </section>
+                  </div>
+              </footer>
+      </section>
+      <?php?><script><?php include 'Script/script.js'; ?></script>
 
 </body>
 </html>
