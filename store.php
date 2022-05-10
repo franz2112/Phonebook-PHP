@@ -26,7 +26,7 @@
       $result = mysqli_query($con, $sql);
       if($result)
       {
-        echo "alert('Data Inserted to Phonebook')";
+        echo "<script>alert('Data Inserted to Phonebook')</script>";
         echo "<script> window.open('store.php', '_self')</script>";
       }
       else
