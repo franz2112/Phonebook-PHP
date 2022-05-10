@@ -122,7 +122,7 @@
       <section class="home-section">
         <!-- main page -->
         <div class="container pt-5">
-            <div class="bg-color">
+            <div class="store-input">
                 <form method="post">
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
