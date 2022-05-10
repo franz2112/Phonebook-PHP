@@ -78,21 +78,21 @@
                       <span class="tooltip">Search</span>
                   </li> -->
                   <li>
-                      <a href="#" active>
+                      <a href="index.php" active>
                           <i class="fa-solid fa-home"></i>                        
                           <span class="links_name">Home</span>
                       </a>
                       <span class="tooltip">Home</span>
                   </li>
                  <li>
-                      <a href="#">
+                      <a href="store.php">
                           <i class="fa-solid fa-box-archive"></i>                        
                           <span class="links_name">Store</span>
                       </a>
                       <span class="tooltip">Store</span>
                   </li>
                   <li>
-                      <a href="#">
+                      <a href="edit.php">
                           <i class="fa-solid fa-pen"></i>
                           <span class="links_name">Edit</span>
                       </a>
@@ -106,11 +106,11 @@
                       <span class="tooltip">Delete</span>
                   </li>
                   <li>
-                      <a href="#">
+                      <a href="viewsearch.php">
                           <i class="fa-solid fa-magnifying-glass"></i>                        
-                          <span class="links_name">Search</span>
+                          <span class="links_name">View/Search</span>
                      </a>
-                      <span class="tooltip">Search</span>
+                      <span class="tooltip">View/Search</span>
                   </li>
                   <li>
                       <a href="#">
