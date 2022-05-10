@@ -61,13 +61,13 @@
 <body>
     <!--VIDEO BG-->
       <video autoplay muted loop class="myVideo">
-          <source src="VBGOpacity.mp4" type="video/mp4">
+          <source src="bg.mp4" type="video/mp4">
       </video>
     <!--End of Video BG-->
       <div class="container">
           <div class="sidebar">
               <div class="logo-details">
-                  <i class='fa-solid fa-tty icon'></i>
+              <i class="fa-solid fa-0 icon"></i>
                   <div class="logo_name">PHONEBOOK</div>
                   <i class='bx bx-menu' id="btn" ></i>
               </div>
@@ -130,8 +130,13 @@
               <div class="main-text">
                   <!-- <img src="https://html.sammy-codes.com/images/small-profile.jpeg" class="main-page"> -->
                   <h1>THE ASEAN STUDENT PHONEBOOK</h1>
-                   <!-- <p class=" text-white">Senior Selachimorpha at DigitalOcean</p> -->
-                  <!-- <p><a href="#">About this site</a></p> -->
+
+                  <div class="container">
+                      <p class="text-white">Southeast Asia has 11 countries. If you have a classmate or schoolmate from this area, and you
+want to contact him, you can make an international call. Typically, to make that call, the country
+code has first to be dialled before the actual telephone number. Take note of the following
+ASEAN countries with their corresponding country codes.</p>
+                  </div>
               </div>
           </div>
 
