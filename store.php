@@ -1,33 +1,41 @@
 <?php
-    include ('connect.php');
-    if(isset($_POST['submit'])){
-        $username=$_POST['username'];
-        $email=$_POST['email'];
-        $password=$_POST['password'];
-        $mobile=$_POST['mobile'];
+  include('connect.php');
+  if (isset($_POST['submit'])) 
+  {
+    // code...
+    $idnumber=$_POST['idnumber'];
+    $surname=$_POST['surname'];
+    $firstname=$_POST['firstname'];
+    $occupation=$_POST['occupation'];
+    $gender=$_POST['gender'];
+    $countrycode=$_POST['countrycode'];
+    $areacode=$_POST['areacode'];
+    $mobilenumber=$_POST['mobilenumber'];
 
-        $password_hash = password_hash($password, PASSWORD_DEFAULT);
+    $sql= "Select * From `store` Where idnumber= '$idnumber' or surname= '$surname'";
+    $selectresult=mysqli_query($con, $sql);
+    $number=mysqli_num_rows(selectresult);
 
-        $sql="Select * from `crud` where username='$username' or email='$email'";
-        $selectresult=mysqli_query($con, $sql);
-        $number=mysqli_num_rows($selectresult);
-
-        if($number>0){
-            echo "<script>alert('username or email already exist')</script>";
-        }
-        else{
-            $insert_query = "insert into crud (username,email,password,mobile) values(
-                '$username', '$email', '$password_hash', '$mobile')";
-            $result=mysqli_query($con, $insert_query);
-            if($result){
-                echo "<script>alert('Data inserted successfully')</script>";
-                echo "<script>window.open('display.php', '_self')</script>";
-            }
-            else{
-                die(mysql_error($con));
-            }
-        }
+    if ($number>0)
+    {
+      echo"<script>alert('idnumber already exist')</script>";
     }
+    else
+    {
+      $sql = "insert into `store` (idnumber, surname, firstname, occupation, gender, countrycode, areacode, mobilenumber) values ('$idnumber', '$surname', '$firstname', '$occupation', '$gender', '$countrycode', '$areacode', '$mobilenumber')";
+      $result = mysqli_query($con, $sql);
+      if($result)
+      {
+        echo "Data Inserted to Phonebook";
+        echo "<script> window.open('display.php', '_self')</script>";
+      }
+      else
+      {
+        die (mysqli_error($con));
+      }
+    }
+  }
+
 ?>
 
 <!doctype html>
@@ -124,23 +132,38 @@
         <div class="container pt-5">
             <div class="store-input">
                 <form method="post">
-                    <div class="mb-3">
-                        <label for="username" class="form-label">Username</label>
-                        <input type="username" name="username" class="form-control" id="username" aria-describedby="emailHelp" required="required" placeholder="Write Username">
+                    <div class="form-group">
+                        <label> Student Number </label>
+                        <input type="varchar" required="required" class="text-area" placeholder="Enter Student Number" name="idnumber">
                     </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email Address</label>
-                        <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" required="required" placeholder="Write Email Address">
+                    <br>
+                    <div class="form-group">
+                        <label> Surname </label> <label class="indent3">Firstname</label> <br>
+                        <input type="varchar" required="required" class="text-area1" placeholder="Enter Surname" name="Surname">
+                        <input type="varchar" required="required" class="text-area1" placeholder="Enter First Name" name="firstname">
                     </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" name="password" class="form-control" id="password" required="required" placeholder="Write Password">
+                    <br>
+                    <div class="form-group">
+                        <label> Occupation </label> <label class="indent2">Gender</label> <br>
+                        <input type="varchar" required="required" class="text-area2" placeholder="Enter Occupation" name="occupation">
+                        <input type="radio" id="html" name="fav_language" value="m">
+                        <label for="html">Male</label> &nbsp
+                        <input type="radio" id="css" name="fav_language" value="f">
+                        <label for="css">Female</label>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <label> Country Code</label> <label class="indent">Area Code </label> <br>
+                        <input type="int" required="required" class="text-area3" placeholder="Enter Country Code" name="countrycode">
+                        <input type="int" required="required" class="text-area3" placeholder="Enter Area Code" name="areacode">
                     </div>
-                    <div class="mb-3">
-                        <label for="mobile" class="form-label">Phone Number</label>
-                        <input type="mobile" name="mobile" class="form-control" id="mobile" aria-describedby="emailHelp" required="required" placeholder="Write Number" minlength="11" maxlength="11">
+                    <br>
+                    <div class="form-group">
+                        <label> Mobile number </label>
+                        <input type="int" required="required" class="text-area" placeholder="Enter Mobile Number" name="mobilenumber">
                     </div>
-                    <button name="submit" type="submit" class="btn btn-success">Submit</button>
+                    <br>
+                    <button name="submit" type="submit" class="btnsubmit">Submit</button>
                     <a href="display.php" class="btn btn-primary">View Users</a>
                 </form>
             </div> 

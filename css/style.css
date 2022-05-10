@@ -289,13 +289,65 @@ h1{
   background: rgba(37, 36, 36, 0.7);
 }
 .store-input{
-  width: 100%;
+  width:60%;
   padding: 50px;
   border-radius: 20px;
   color: #fff;
   background: rgba(37, 36, 36, 0.7);
   font-weight: lighter;
 }
+.text-area{
+  width: 100%;
+  background: rgba(255, 255, 255, 0);
+  border: solid;
+  font-size: 16px;
+  color: #fff;
+  padding: 7px;
+  border-radius: 10px;
+}
+.text-area1{
+  width: 49.5%;
+  background: rgba(255, 255, 255, 0);
+  border: solid;
+  font-size: 16px;
+  color: #fff;
+  padding: 7px;
+  border-radius: 10px;
+}
+.text-area2{
+  width: 49.5%;
+  background: rgba(255, 255, 255, 0);
+  border: solid;
+  font-size: 16px;
+  color: #fff;
+  padding: 7px;
+  border-radius: 10px;
+}
+.text-area3{
+  width: 49.5%;
+  background: rgba(255, 255, 255, 0);
+  border: solid;
+  font-size: 16px;
+  color: #fff;
+  padding: 7px;
+  border-radius: 10px;
+}
+.indent {
+  padding-left: 225px;
+}
+.indent2 {
+  padding-left: 240px;
+}
+.indent3 {
+  padding-left: 265px;
+}
+.btnsubmit{
+  width: 82%;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(25,134,84,255);
+}
+
 footer{
   margin-top: 330px;
 }
