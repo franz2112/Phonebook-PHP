@@ -14,7 +14,7 @@
 
     $sql= "Select * From `store` Where idnumber= '$idnumber' or surname= '$surname'";
     $selectresult=mysqli_query($con, $sql);
-    $number=mysqli_num_rows(selectresult);
+    $number=mysqli_num_rows($selectresult);
 
     if ($number>0)
     {
@@ -26,8 +26,8 @@
       $result = mysqli_query($con, $sql);
       if($result)
       {
-        echo "Data Inserted to Phonebook";
-        echo "<script> window.open('display.php', '_self')</script>";
+        echo "alert('Data Inserted to Phonebook')";
+        echo "<script> window.open('store.php', '_self')</script>";
       }
       else
       {
@@ -139,16 +139,16 @@
                     <br>
                     <div class="form-group">
                         <label> Surname </label> <label class="indent3">Firstname</label> <br>
-                        <input type="varchar" required="required" class="text-area1" placeholder="Enter Surname" name="Surname">
+                        <input type="varchar" required="required" class="text-area1" placeholder="Enter Surname" name="surname">
                         <input type="varchar" required="required" class="text-area1" placeholder="Enter First Name" name="firstname">
                     </div>
                     <br>
                     <div class="form-group">
                         <label> Occupation </label> <label class="indent2">Gender</label> <br>
                         <input type="varchar" required="required" class="text-area2" placeholder="Enter Occupation" name="occupation">
-                        <input type="radio" id="html" name="fav_language" value="m">
+                        <input type="radio" id="html" name="gender" value="male">
                         <label for="html">Male</label> &nbsp
-                        <input type="radio" id="css" name="fav_language" value="f">
+                        <input type="radio" id="css" name="gender" value="female">
                         <label for="css">Female</label>
                     <br>
                     <br>
@@ -164,7 +164,6 @@
                     </div>
                     <br>
                     <button name="submit" type="submit" class="btnsubmit">Submit</button>
-                    <a href="display.php" class="btn btn-primary">View Users</a>
                 </form>
             </div> 
         </div>

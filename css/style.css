@@ -350,7 +350,7 @@ h1{
   padding-left: 265px;
 }
 .btnsubmit{
-  width: 82%;
+  width: 30%;
   padding: 10px;
   border-radius: 10px;
   background: rgba(25,134,84,255);
@@ -518,4 +518,5 @@ ol.odd {
 .honeycomb{
   padding-top: 20px;
   width: 100%;
+  
 }
