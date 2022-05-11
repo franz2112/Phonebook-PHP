@@ -96,7 +96,7 @@
                       <span class="tooltip">Delete</span>
                   </li>
                   <li>
-                      <a href="viewsearch.php">
+                      <a href="selectsearch.php">
                           <i class="fa-solid fa-magnifying-glass"></i>                        
                           <span class="links_name">View/Search</span>
                      </a>

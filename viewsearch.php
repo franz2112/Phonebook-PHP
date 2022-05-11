@@ -99,7 +99,6 @@
                 <th scope="col">#</th>
                 <th scope="col">Username</th>
                 <th scope="col">Email</th>
-                <!-- <th scope="col">Password</th> -->
                 <th scope="col">Mobile</th>
                 <th scope="col">Operations</th>
                 </tr>
