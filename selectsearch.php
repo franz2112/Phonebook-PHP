@@ -93,18 +93,16 @@
   </div>  
   <section class="home-section">
   <!-- main page -->
-          <div class="container">
-            <div class="middle">
-            <div class="d-flex justify-content-center">
-                <a href="index.php" class="navitem">Search by Country</a>
-                <a href="searchsurname.php" class="navitem">Search by Surname</a>
-                <a href="index.php" class="navitem">Search by Country</a>
-              </div>
+   
+          <div class="search-menu">
+            <div class="d-flex justify-content-center flex-wrap">
+            <div class="field">
+              <a href="facebook.com" class="button ice" role="button">Search by Country</a>
+              <a href="facebook.com" class="button ice" role="button">Search by Surname</a>
+              <a href="facebook.com" class="button ice" role="button">Back To Main Menu</a>
+            </div>
             </div>
           </div>
-
-            
-
 
            <!-- Footer -->
            <footer class="text-center text-lg-start text-white">

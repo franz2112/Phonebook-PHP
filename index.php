@@ -184,7 +184,7 @@
         </div>
             
         <div class="container">
-            <div class="honeycomb">
+            <div class="honeycomb d-flex justify-content-center">
                 <ol class="odd">
                     <li class='hex'></li>
                     <li class='hex'></li>
