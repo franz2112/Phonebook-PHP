@@ -1,3 +1,4 @@
+
 <?php
   include('connect.php');
   if (isset($_POST['submit'])) 
@@ -11,11 +12,9 @@
     $countrycode=$_POST['countrycode'];
     $areacode=$_POST['areacode'];
     $mobilenumber=$_POST['mobilenumber'];
-
     $sql= "Select * From `store` Where idnumber= '$idnumber' or surname= '$surname'";
     $selectresult=mysqli_query($con, $sql);
     $number=mysqli_num_rows($selectresult);
-
     if ($number>0)
     {
       echo"<script>alert('idnumber already exist')</script>";
@@ -35,32 +34,34 @@
       }
     }
   }
-
 ?>
-
 <!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     
     <style><?php include 'css/style.css'; ?></style>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-
+    
     <script src="https://kit.fontawesome.com/6a478048bc.js" crossorigin="anonymous"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <title>Store</title>
   </head>
   <body>
@@ -127,12 +128,14 @@
              </ul>
           </div>
       </div>
-
       <section class="home-section">
         
         <!-- main page -->
         <div class="container pt-5">
             <div class="store-input">
+                <div class="map js-tilt-reverse" data-tilt>
+                    <img src="img/map5.png" alt="img">
+                </div>
                 <form method="post">
                     <div class="form-group">
                         <label> Student Number </label>
@@ -169,7 +172,6 @@
                               <option value="856">Lao - 856</option>
                               <option value="95">Myanmar - 95</option>
                               <option value="670">Timor Leste - 670</option>
-
                         </select>
                         <input type="int" required="required" class="text-area3" placeholder="Enter Area Code" name="areacode">
                     </div>
@@ -182,11 +184,9 @@
                     <button name="submit" type="submit" class="btnsubmit">Submit</button>
                 </form>
             </div> 
-            <div class="container">
-              <div class="map">
-            <img src="img/map5.png">
-      </div>
-    </div>
+            <!-- <div class="container">
+               
+            </div> -->
         </div>
     
            <!-- Footer -->
@@ -230,9 +230,14 @@
                 </div>
             </footer>
       </section>
-      <?php?><script><?php include 'Script/script.js'; ?></script>
-
-  
+    <?php?><script><?php include 'Script/script.js'; ?></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  </body>
+    
+    <?php?><script><?php include 'Script/tilt.jquery.min.js'; ?></script>
+    <script >
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+</body>
 </html>
