@@ -127,7 +127,9 @@
              </ul>
           </div>
       </div>
+
       <section class="home-section">
+        
         <!-- main page -->
         <div class="container pt-5">
             <div class="store-input">
@@ -180,9 +182,13 @@
                     <button name="submit" type="submit" class="btnsubmit">Submit</button>
                 </form>
             </div> 
+            <div class="container">
+              <div class="map">
+            <img src="img/map5.png">
+      </div>
+    </div>
         </div>
     
-
            <!-- Footer -->
            <footer class="text-center text-lg-start text-white">
               <!-- Grid container -->
