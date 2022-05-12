@@ -487,11 +487,11 @@ ol.odd {
   margin: 1em auto;
   width: 6rem;
   height: 10.2rem;
-  background: #2e2e2e;
+  background: #000000;
   transform: rotate(-90deg);
   display: inline-block;
   list-style-type: none;
-  margin-right: 6.1538rem;
+  margin-right: 4.1538rem;
   transition: all 150ms ease-in-out;
   z-index: 2;
 }
@@ -518,6 +518,26 @@ ol.odd {
   padding-top: 20px;
   width: 100%;
   
+}
+
+/*button style in search*/
+.navitem {
+  display: inline-block; 
+  text-align: center;
+  cursor: pointer;
+  margin: 10px;
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  width: 15%;
+  height: 200px;
+  font-size: 20px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  border-radius: 20px;
+}
+.middle{
+  width: 100%;
+  height: 200%;
 }
 
 /*button style in search*/
@@ -656,3 +676,5 @@ ol.odd {
 .ref::first-letter {
   font-size: 12px;
 }
+
+/* search bar*/

@@ -28,7 +28,7 @@
 
 </head>
 <body>
-  <title>Search by Surname</title>
+  <title>Search by Country</title>
   </head>
   <body>
    <!--VIDEO BG-->
@@ -95,12 +95,12 @@
           </div>
       </div>
     <section class="home-section">
-<form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
-  <input type="text" placeholder="Search student Surname" name="search2">
-  <button type="submit"><i class="fa fa-search"></i></button>
-</form>
+        <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+            <input type="text" placeholder="Search Country Name" name="search2">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
 
-<div class="container pt-5">
+        <div class="container pt-5">
       <div class="bg-color">
         <table class="table">
             <thead class="table-dark">
@@ -151,7 +151,6 @@
         <a href="index.php" class="btn btn-primary">Add User</a>
       </div>  
     </div>
-
 
 
 

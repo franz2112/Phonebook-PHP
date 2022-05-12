@@ -46,11 +46,11 @@
     <!-- Bootstrap CSS -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 
-    <title>Update</title>
+    <title>Edit</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-  <body style="background-color: #ffe2c9;">
+  <body>
     <!--VIDEO BG-->
     <video autoplay muted loop class="myVideo">
           <source src="bg1.mp4" type="video/mp4">
@@ -91,21 +91,21 @@
                   <span class="tooltip">Edit</span>
                   </li>
                   <li>
-                      <a href="#">
+                      <a href="delete.php">
                           <i class="fa-solid fa-trash-can"></i>
                           <span class="links_name">Delete</span>
                       </a>
                       <span class="tooltip">Delete</span>
                   </li>
                   <li>
-                      <a href="viewsearch.php">
+                      <a href="selectsearch.php">
                           <i class="fa-solid fa-magnifying-glass"></i>                        
                           <span class="links_name">View/Search</span>
                      </a>
                       <span class="tooltip">View/Search</span>
                   </li>
                   <li>
-                      <a href="#">
+                      <a href="exit.php">
                           <i class="fa-solid fa-door-open"></i>                      
                           <span class="links_name">Exit</span>
                       </a>
@@ -114,27 +114,18 @@
              </ul>
           </div>
       </div>
-      <div class="container pt-5 "> 
-       <div class="bg-color">
-        <form method="post" >
-                <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input type="username" name="username"  class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter your username" autocomplete="off" value="<?php echo $userdisplay ?>">
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email address</label>
-                    <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp"  placeholder="Enter your username" autocomplete="off" value="<?php echo $emaildisplay ?>">
-                </div>
-                <div class="mb-3">
-                    <label for="mobile" class="form-label">Phone Number</label>
-                    <input type="mobile" name="mobile" class="form-control" id="mobile" aria-describedby="emailHelp" placeholder="Enter your username" autocomplete="off" value="<?php echo $mobiledisplay ?>" minlength="11" maxlength="11">
-                </div>
-                <button name="submit" type="submit" class="btn btn-success">Update</button>
-                <!-- <a href="display.php" class="btn btn-info">View Users</a> -->
+      
 
-            </form>
-       </div>
-    </div>
+
+
+
+
+
+
+
+
+
+
       <!-- Footer -->
     <footer class="text-center text-lg-start text-white">
       <!-- Grid container -->

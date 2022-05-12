@@ -66,7 +66,7 @@
               <span class="tooltip">Edit</span>
             </li>
             <li>
-              <a href="#">
+              <a href="delete.php">
                   <i class="fa-solid fa-trash-can"></i>
                   <span class="links_name">Delete</span>
               </a>
@@ -80,7 +80,7 @@
               <span class="tooltip">View/Search</span>
             </li>
             <li>
-              <a href="#">
+              <a href="exit.php">
                   <i class="fa-solid fa-door-open"></i>                      
                   <span class="links_name">Exit</span>
               </a>
