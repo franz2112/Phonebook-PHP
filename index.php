@@ -183,7 +183,7 @@
             </div>
         </div>
             
-        <div class="container">
+        <!-- <div class="container">
             <div class="honeycomb d-flex justify-content-center">
                 <ol class="odd">
                     <li class='hex'></li>
@@ -192,7 +192,7 @@
                     <li class='hex'></li>
                 </ol>  
             </div>
-        </div>
+        </div> -->
            <!-- Footer -->
            <footer class="text-center text-lg-start text-white">
               <!-- Grid container -->
