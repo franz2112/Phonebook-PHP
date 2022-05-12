@@ -206,7 +206,10 @@
                                     placeholder="Enter Mobile Number" name="mobilenumber">
                             </div>
                             <br>
-                            <button name="submit" type="submit" class="btnsubmit">Submit</button>
+                            <div class="search-menu-submit">
+                                <!-- <a href="searchcountry.php" class="button ice" role="button">Search</a> -->
+                                <button name="submit" type="submit" class="button ice" role="button">Submit</button>
+                            </div>
                     </form>
                 </div>
             </div>

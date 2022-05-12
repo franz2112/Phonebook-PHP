@@ -352,6 +352,10 @@ h1 {
     padding: 40px;
 }
 
+.form-details {
+    width: 50%;
+}
+
 .main-menu-bg {
     background: rgba(37, 36, 36, 0.7);
     border-radius: 10px;
@@ -676,6 +680,10 @@ ol.odd {
     padding-top: 15px;
 }
 
+.search-menu-submit {
+    width: 100%;
+}
+
 
 /* seach menu buttons*/
 
@@ -854,7 +862,7 @@ input[type=checkbox] {
 }
 
 .search input {
-    height: 60px;
+    height: 50px;
     text-indent: 25px;
     border: 2px solid #d6d4d4;
 }
@@ -874,7 +882,7 @@ input[type=checkbox] {
     position: absolute;
     top: 5px;
     right: 8px;
-    height: 50px;
+    height: 40px;
     width: 110px;
     background: rgb(53, 53, 53);
     color: white;
@@ -888,7 +896,6 @@ input[type=checkbox] {
     width: 100%;
     font-size: 12pt;
     font-weight: lighter;
-    margin-top: 50px;
     padding: 50px;
 }
 
@@ -898,11 +905,30 @@ input[type=checkbox] {
 }
 
 
+/* delete data table */
+
+.delete-data-design {
+    width: 100%;
+    font-size: 12pt;
+    font-weight: lighter;
+    padding: 50px;
+    margin-bottom: 300px;
+}
+
+.delete-data-design th {
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+
 /* Responsive */
 
 @media (max-width: 1185px) {
     .form-details {
-        width: 40%;
+        width: 100%;
+    }
+    .form-contain {
+        display: none;
     }
 }
 
@@ -914,7 +940,7 @@ input[type=checkbox] {
         width: 35%;
     }
     .form-details {
-        width: 50%;
+        width: 100%;
     }
 }
 
