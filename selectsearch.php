@@ -1,15 +1,24 @@
-
 <?php
 
 include 'Connect.php';
 
-if (isset($_POST["update_id"])) {
-    $str = $_POST["store"];
-    $sth = $con->prepare("SELECT * FROM store WHERE surname = '$str'");
+if (isset($_POST["surnamesubmit"])) {
+        $surname = $_POST['surnamesearch'];
+        $select_query = "select * from store where surname='$surname'";
+        $result=mysqli_query($con,$select_query);
 
-    $sth->setFetchMode(PDO:: FETCH_OBJ);
-    $sth -> execute();
-
+        if(mysqli_num_rows($result)>0){
+            // while($row=mysqli_fetch_assoc($select_query)){
+            //     echo ['surname'];
+            // }
+            echo "<script>alert('Surname exist!')</script>";
+            echo "<script>window.open('searchsurname.php', '_self')</script>";
+        }
+        else{
+            echo"<script>alert('Surname not exist!')</script>";
+            echo "<script>window.open('selectsearch.php', '_self')</script>";
+        }
+    }
    
 ?>
 
@@ -119,20 +128,23 @@ if (isset($_POST["update_id"])) {
                 <div class="search-bg-meaning">
                     <h1>Search by Surname</h1>
                     <h3>Whom are you looking for?</h3>
-                    <div class="search">
-                        <i style="color: black;" class="fa fa-search"></i>
-                        <input type="text" class="form-control" placeholder="Enter Surname">
-                    </div>
-
-                    <div class="search-menu-1">
-                        <div class="field">
-                                <button class='button ice'> <a href='searchsurname.php?update_id=$id'>Search</button>
+                    <form action="" method="POST">
+                        <div class="search">
+                            <i style="color: black;" class="fa fa-search"></i>
+                            <input type="text" class="form-control" placeholder="Enter Surname" name="surnamesearch">
                         </div>
-                    </div>
+                        <div class="search-menu-1">
+                            <div class="field">
+                                <button type="submit" class='button ice' name="surnamesubmit">Search</button>
+                                <!-- <a href="searchsurname.php?surnamesubmit='.$surname.'" class='button ice'
+                                    name="surnamesubmit" type="submit" role="button">Search</a> -->
+                            </div>
+                        </div>
+                    </form>
+
+
 
                 </div>
-
-
 
                 <div class="search-bg-meaning">
                     <h1>Search by Country</h1>
@@ -208,64 +220,62 @@ if (isset($_POST["update_id"])) {
                         </div>
                     </div>
                 </div>
-                 
-                <div class="table-responsive data-design" >
+
+                <div class="table-responsive data-design">
                     <table class="table table text-white">
                         <h1>Student Data</h1>
-                      <thead>
-                        <tr>
-                            <th scope="col">Student Number</th>
-                            <th scope="col">Surname</th>
-                            <th scope="col">Firstname</th>
-                            <th scope="col">Occupation </th>
-                            <th scope="col">Gender</th>
-                            <th scope="col">Country Code </th>
-                            <th scope="col">Area Code</th>
-                            <th scope="col">Mobile number</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                    </div>
-
-        <!--PHP Display Table-->            
-        <?php
-            $select_query="Select * from store";
-            $result=mysqli_query($con,$select_query);
-            $i=1;
-            if($result){
-               while ($row=mysqli_fetch_assoc($result)) {
-                  $idnumber=$row['idnumber'];
-                  $surname=$row['surname'];
-                  $firstname=$row['firstname'];
-                  $occupation=$row['occupation'];
-                  $gender=$row['gender'];
-                  $countrycode=$row['countrycode'];
-                  $areacode=$row['areacode'];
-                  $mobilenumber=$row['mobilenumber'];
-                 echo " <tr> 
-                    <th>$idnumber</th>
-                    <td>$surname</td>
-                    <td>$firstname</td>
-                    <td>$occupation</td>
-                    <td>$gender</td>
-                    <td>$countrycode</td>
-                    <td>$areacode</td>
-                    <td>$mobilenumber</td>
-                    <td class='text-center'>
-                 </td>
-                 </tr>";
-                $i++;
-               }
-            }
-            else{
-                die(mysqli_error($con));
-            }
-
-        ?>
-
-                    </table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Student Number</th>
+                                <th scope="col">Surname</th>
+                                <th scope="col">Firstname</th>
+                                <th scope="col">Occupation </th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Country Code </th>
+                                <th scope="col">Area Code</th>
+                                <th scope="col">Mobile number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                 </div>
+
+                <!--PHP Display Table-->
+                <?php
+                    $select_query="Select * from store";
+                    $result=mysqli_query($con,$select_query);
+                    $i=1;
+                    if($result){
+                        while ($row=mysqli_fetch_assoc($result)) {
+                            $idnumber=$row['idnumber'];
+                            $surname=$row['surname'];
+                            $firstname=$row['firstname'];
+                            $occupation=$row['occupation'];
+                            $gender=$row['gender'];
+                            $countrycode=$row['countrycode'];
+                            $areacode=$row['areacode'];
+                            $mobilenumber=$row['mobilenumber'];
+                            echo " <tr> 
+                                <th>$idnumber</th>
+                                <td>$surname</td>
+                                <td>$firstname</td>
+                                <td>$occupation</td>
+                                <td>$gender</td>
+                                <td>$countrycode</td>
+                                <td>$areacode</td>
+                                <td>$mobilenumber</td>
+                                <td class='text-center'>
+                            </td>
+                            </tr>";
+                            $i++;
+                        }
+                    }
+                    else{
+                        die(mysqli_error($con));
+                    }
+                ?>
+                </table>
             </div>
+        </div>
         </div>
         <!--End Display-->
 
