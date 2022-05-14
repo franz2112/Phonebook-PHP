@@ -1,7 +1,17 @@
 <?php
+   
+    include 'Connect.php';
+    $surname = "";
+    
 
-  include('connect.php');
-
+    if(isset($_POST['submit']))
+    {
+      $surname = $_POST['surname'];
+      $choice = $_POST['choice'];
+      $sql1="select * from `store` where surname = $surname";
+      $result = mysqli_query($con, $sql1);
+      $row=mysqli_fetch_assoc($result);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -43,9 +53,9 @@
 
 <body style="background-color: #ffe2c9;">
 
-    <video autoplay muted loop class="myVideo">
+    <!--<video autoplay muted loop class="myVideo">
         <source src="bg1.mp4" type="video/mp4">
-    </video>
+    </video>-->
     <!--End of Video BG-->
     <div class="container">
         <div class="sidebar">
@@ -101,24 +111,107 @@
         </div>
     </div>
     <section class="home-section">
+
+
         <!-- main page -->
         <div class="main-text">
             <!-- <img src="https://html.sammy-codes.com/images/small-profile.jpeg" class="main-page"> -->
             <div class="container-xxl">
                 <div class="search-bg-meaning">
                     <h1>Search by Surname</h1>
-                    <h3>What are you looking for?</h3>
+                    <h3>Whom are you looking for?</h3>
                     <div class="search">
-                        <i class="fa fa-search"></i>
-                        <input type="text" class="form-control" placeholder="">
-                        <button>Search</button>
+                        <i style="color: black;" class="fa fa-search"></i>
+                        <input type="text" class="form-control" placeholder="Enter Surname">
+                        <button name="submit" type="submit">Search</button>
                     </div>
                     <div class="search-menu-1">
                         <div class="field">
-                            <a href="searchcountry.php" class="button ice" role="button">Search</a>
+                            <a href="searchsurname.php" class="button ice" role="button" name="submit" type="submit">Search</a>
                         </div>
                     </div>
                 </div>
+
+
+
+                <!--Table
+            <div class="container pt-5">
+                <div class="table-responsive delete-data-design ">
+                    <table class="table table text-white">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID Number</th>
+                                <th scope="col">Surname</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Occupation</th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Country Code</th>
+                                <th scope="col">Area Code</th>
+                                <th scope="col">Mobile Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+            <?php
+              if(isset($_POST['submit'])){
+              if($row){
+
+              $sql1="Select * from  `store` where surname = $surname";
+              $selectresult=mysqli_query($con, $sql1);
+              $i=1;
+              if($selectresult){
+                while($row1=mysqli_fetch_assoc($selectresult)){
+                  $idnumber1=$row1['idnumber'];
+                  $surname=$row1['surname'];
+                  $firstname=$row1['firstname'];
+                  $occupation=$row1['occupation'];
+                  $gender=$row1['gender'];
+                  $countrycode=$row1['countrycode'];
+                  $areacode=$row1['areacode'];
+                  $mobilenumber=$row1['mobilenumber'];
+                  echo '
+                  <tr class= "tabledelete">
+                    <th scope="row">'.$idnumber1.'</th>
+                    <td>'.$surname.'</td>
+                    <td>'.$firstname.'</td>
+                    <td>'.$occupation.'</td>
+                    <td>'.$gender.'</td>
+                    <td>'.$countrycode.'</td>
+                    <td>'.$areacode.'</td>
+                    <td>'.$mobilenumber.'</td>
+                    <td>
+                  </tr>
+                  ';
+                  $i++;
+                }
+              }
+              else{
+                die(mysql_error($con));
+              }
+            }
+            else {
+                ?>
+                   <div class="errordelete">
+                      <i class="fa-solid fa-triangle-exclamation"><i> </i><label>DATA DOES NOT EXIST</label></i>
+                    </div>
+                 <?php
+            }
+          }
+            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            End Table-->
+
+
+
+
+
+
+
+
+
                 <div class="search-bg-meaning">
                     <h1>Search by Country</h1>
                     <table class="table text-white">
@@ -193,37 +286,66 @@
                         </div>
                     </div>
                 </div>
-                <div class="table-responsive data-design">
-                    <h1>Student Data</h1>
-                    <table class="table text-white">
-                        <thead>
-                            <tr>
-                                <th scope="col">Student Number</th>
-                                <th scope="col">Surname</th>
-                                <th scope="col">Firstname</th>
-                                <th scope="col">Occupation </th>
-                                <th scope="col">Gender</th>
-                                <th scope="col">Country Code </th>
-                                <th scope="col">Area Code</th>
-                                <th scope="col">Mobile number</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Federation of Malaysia</td>
-                                <td>60</td>
-                                <td>Federation of Malaysia</td>
-                                <td>60</td>
-                                <td>Federation of Malaysia</td>
-                                <td>60</td>
-                                <td>Federation of Malaysia</td>
-                                <td>60</td>
-                            </tr>
-                        </tbody>
+                 
+                <div class="table-responsive data-design" >
+                    <table class="table table text-white">
+                        <h1>Student Data</h1>
+                      <thead>
+                        <tr>
+                            <th scope="col">Student Number</th>
+                            <th scope="col">Surname</th>
+                            <th scope="col">Firstname</th>
+                            <th scope="col">Occupation </th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Country Code </th>
+                            <th scope="col">Area Code</th>
+                            <th scope="col">Mobile number</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                    </div>
+
+        <!--PHP Display Table-->            
+        <?php
+            $select_query="Select * from store";
+            $result=mysqli_query($con,$select_query);
+            $i=1;
+            if($result){
+               while ($row=mysqli_fetch_assoc($result)) {
+                  $idnumber=$row['idnumber'];
+                  $surname=$row['surname'];
+                  $firstname=$row['firstname'];
+                  $occupation=$row['occupation'];
+                  $gender=$row['gender'];
+                  $countrycode=$row['countrycode'];
+                  $areacode=$row['areacode'];
+                  $mobilenumber=$row['mobilenumber'];
+                 echo " <tr> 
+                    <th>$idnumber</th>
+                    <td>$surname</td>
+                    <td>$firstname</td>
+                    <td>$occupation</td>
+                    <td>$gender</td>
+                    <td>$countrycode</td>
+                    <td>$areacode</td>
+                    <td>$mobilenumber</td>
+                    <td class='text-center'>
+                 </td>
+                 </tr>";
+                $i++;
+               }
+            }
+            else{
+                die(mysqli_error($con));
+            }
+
+        ?>
+
                     </table>
                 </div>
             </div>
         </div>
+        <!--End Display-->
 
         <!-- Footer -->
         <footer class="text-center text-lg-start text-white">

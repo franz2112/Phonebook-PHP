@@ -1,3 +1,10 @@
+<?php
+    
+    include 'Connect.php';
+
+  
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,10 +38,10 @@
   <title>Search by Surname</title>
   </head>
   <body>
-   <!--VIDEO BG-->
+   <!--VIDEO BG
       <video autoplay muted loop class="myVideo">
           <source src="bg1.mp4" type="video/mp4">
-      </video>
+      </video>-->
     <!--End of Video BG-->
       <div class="container">
           <div class="sidebar">
@@ -95,48 +102,53 @@
           </div>
       </div>
     <section class="home-section">
-<form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
-  <input type="text" placeholder="Search student Surname" name="search2">
-  <button type="submit"><i class="fa fa-search"></i></button>
-</form>
 
-<div class="container pt-5">
-      <div class="bg-color">
-        <table class="table">
-            <thead class="table-dark">
-                <tr>
-                <th scope="col">ID Number</th>
-                <th scope="col">Surname</th>
-                <th scope="col">First Name</th>
-                <th scope="col">Occupation</th>
-                <th scope="col">Gender</th>
-                <th scope="col">Country Code</th>
-                <th scope="col">Area Code</th>
-                <th scope="col">Mobile Number</th>
-                </tr>
-            </thead>
-            <tbody>
+
+      <!--Table-->
+            <div class="container pt-5">
+                <div class="table-responsive delete-data-design ">
+                    <table class="table table text-white">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID Number</th>
+                                <th scope="col">Surname</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Occupation</th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Country Code</th>
+                                <th scope="col">Area Code</th>
+                                <th scope="col">Mobile Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+              
             <?php
-              $sql="Select * from  `store`";
-              $selectresult=mysqli_query($con, $sql);
+              if(isset($_POST['submit'])){
+              if($row){
+
+              $sql1="Select * from  `store` where surname = $surname";
+              $selectresult=mysqli_query($con, $sql1);
               $i=1;
               if($selectresult){
-                while($row=mysqli_fetch_assoc($selectresult)){
-                  $id=$row['id'];
-                  $username=$row['username'];
-                  $email=$row['email'];
-                  // $password=$row['password'];
-                  $mobile=$row['mobile'];
+                while($row1=mysqli_fetch_assoc($selectresult)){
+                  $idnumber1=$row1['idnumber'];
+                  $surname=$row1['surname'];
+                  $firstname=$row1['firstname'];
+                  $occupation=$row1['occupation'];
+                  $gender=$row1['gender'];
+                  $countrycode=$row1['countrycode'];
+                  $areacode=$row1['areacode'];
+                  $mobilenumber=$row1['mobilenumber'];
                   echo '
-                  <tr>
-                    <th scope="row">'.$id.'</th>
-                    <td>'.$username.'</td>
-                    <td>'.$email.'</td>
-                    <td>'.$mobile.'</td>
-                    <td >
-                      <a href="Update.php?updateid='.$id.'" class="btn btn-success" >Update</a>
-                      <a href="Delete.php?deleteid='.$id.'" class="btn btn-danger" >Delete</a>
-                    </td>
+                  <tr class= "tabledelete">
+                    <th scope="row">'.$idnumber1.'</th>
+                    <td>'.$surname.'</td>
+                    <td>'.$firstname.'</td>
+                    <td>'.$occupation.'</td>
+                    <td>'.$gender.'</td>
+                    <td>'.$countrycode.'</td>
+                    <td>'.$areacode.'</td>
+                    <td>'.$mobilenumber.'</td>
                   </tr>
                   ';
                   $i++;
@@ -145,13 +157,24 @@
               else{
                 die(mysql_error($con));
               }
+            }
+            else {
+                ?>
+                   <div class="errordelete">
+                      <i class="fa-solid fa-triangle-exclamation"><i> </i><label>DATA DOES NOT EXIST</label></i>
+                    </div>
+                 <?php
+            }
+          }
             ?>
-            </tbody>
-        </table>
-        <a href="index.php" class="btn btn-primary">Add User</a>
-      </div>  
-    </div>
 
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--End Table-->
 
 
 
