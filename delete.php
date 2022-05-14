@@ -29,10 +29,6 @@
     <?php include 'css/style.css';
     ?>
     </style>
-    <style>
-    <?php include 'css/searchcss.css';
-    ?>
-    </style>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -58,92 +54,94 @@
     </script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Delete</title>
+
 </head>
 
 <body>
-    <title>Delete</title>
-
-    <body>
-        <!--VIDEO BG
+    <!--VIDEO BG
         <video autoplay muted loop class="myVideo">
             <source src="bg1.mp4" type="video/mp4">
         </video>-->
-        <!--End of Video BG-->
-        <div class="container">
-            <div class="sidebar">
-                <div class="logo-details">
-                    <i class="fa-solid fa-0 icon"></i>
-                    <div class="logo_name">PHONEBOOK</div>
-                    <i class='bx bx-menu' id="btn"></i>
-                </div>
-                <ul class="nav-list-1">
-                    <!-- <li>
+    <!--End of Video BG-->
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo-details">
+                <i class="fa-solid fa-0 icon"></i>
+                <div class="logo_name">PHONEBOOK</div>
+                <i class='bx bx-menu' id="btn"></i>
+            </div>
+            <ul class="nav-list-1">
+                <!-- <li>
                       <i class='bx bx-search' ></i>
                       <input type="text" placeholder="Search...">
                       <span class="tooltip">Search</span>
                   </li> -->
-                    <li>
-                        <a href="index.php" active>
-                            <i class="fa-solid fa-home"></i>
-                            <span class="links_name">Home</span>
-                        </a>
-                        <span class="tooltip">Home</span>
-                    </li>
-                    <li>
-                        <a href="store.php">
-                            <i class="fa-solid fa-box-archive"></i>
-                            <span class="links_name">Store</span>
-                        </a>
-                        <span class="tooltip">Store</span>
-                    </li>
-                    <li>
-                        <a href="edit.php">
-                            <i class="fa-solid fa-pen"></i>
-                            <span class="links_name">Edit</span>
-                        </a>
-                        <span class="tooltip">Edit</span>
-                    </li>
-                    <li>
-                        <a href="delete.php">
-                            <i class="fa-solid fa-trash-can"></i>
-                            <span class="links_name">Delete</span>
-                        </a>
-                        <span class="tooltip">Delete</span>
-                    </li>
-                    <li>
-                        <a href="selectsearch.php">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <span class="links_name">View/Search</span>
-                        </a>
-                        <span class="tooltip">View/Search</span>
-                    </li>
-                    <li>
-                        <a href="exit.php">
-                            <i class="fa-solid fa-door-open"></i>
-                            <span class="links_name">Exit</span>
-                        </a>
-                        <span class="tooltip">Exit</span>
-                    </li>
-                </ul>
-            </div>
+                <li>
+                    <a href="index.php" active>
+                        <i class="fa-solid fa-home"></i>
+                        <span class="links_name">Home</span>
+                    </a>
+                    <span class="tooltip">Home</span>
+                </li>
+                <li>
+                    <a href="store.php">
+                        <i class="fa-solid fa-box-archive"></i>
+                        <span class="links_name">Store</span>
+                    </a>
+                    <span class="tooltip">Store</span>
+                </li>
+                <li>
+                    <a href="edit.php">
+                        <i class="fa-solid fa-pen"></i>
+                        <span class="links_name">Edit</span>
+                    </a>
+                    <span class="tooltip">Edit</span>
+                </li>
+                <li>
+                    <a href="delete.php">
+                        <i class="fa-solid fa-trash-can"></i>
+                        <span class="links_name">Delete</span>
+                    </a>
+                    <span class="tooltip">Delete</span>
+                </li>
+                <li>
+                    <a href="selectsearch.php">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span class="links_name">View/Search</span>
+                    </a>
+                    <span class="tooltip">View/Search</span>
+                </li>
+                <li>
+                    <a href="exit.php">
+                        <i class="fa-solid fa-door-open"></i>
+                        <span class="links_name">Exit</span>
+                    </a>
+                    <span class="tooltip">Exit</span>
+                </li>
+            </ul>
         </div>
-        <section class="home-section">
-
-            <!--Search Box With Button-->
-            <br><br>
-            <div class="SDbutton">
-                <form class="SDbutton" style="margin:auto;max-width:250px" method="post">
-                    <input value="<?php echo $idnumber ?>" type="text" placeholder="Search Id Number " name="idnumber">
-                    <button name="submit" type="submit"><i class="fa fa-search"></i></button>
-            </div>
-            <!--End Search Box-->
-
-
+    </div>
+    <section class="home-section">
+        <div class="main-text">
             <!--Table-->
-            <div class="container pt-5">
-                <div class="table-responsive delete-data-design ">
-                    <table class="table table text-white">
+            <div class="container-xxl">
+
+                <div class="table-responsive data-design ">
+                    <!--Search Box With Button-->
+                    <div class="SDbutton">
+                        <form class="SDbutton" method="post">
+                            <button name="submit" type="submit"><i class="fa fa-search"></i></button>
+                            <input value="<?php echo $idnumber ?>" type="text" placeholder="Search Id Number "
+                                name="idnumber">
+                        </form>
+                    </div>
+                    <!--End Search Box-->
+
+                    <table class="table text-white">
                         <thead>
                             <tr>
                                 <th scope="col">ID Number</th>
@@ -158,123 +156,125 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php
+                                    if(isset($_POST['submit'])){
+                                    if($row){
 
-            <?php
-              if(isset($_POST['submit'])){
-              if($row){
-
-              $sql1="Select * from  `store` where idnumber = $idnumber";
-              $selectresult=mysqli_query($con, $sql1);
-              $i=1;
-              if(isset($_POST['Delete'])){
-                header('location:deletefunction.php');
-              }
-              if($selectresult){
-                while($row1=mysqli_fetch_assoc($selectresult)){
-                  $idnumber1=$row1['idnumber'];
-                  $surname=$row1['surname'];
-                  $firstname=$row1['firstname'];
-                  $occupation=$row1['occupation'];
-                  $gender=$row1['gender'];
-                  $countrycode=$row1['countrycode'];
-                  $areacode=$row1['areacode'];
-                  $mobilenumber=$row1['mobilenumber'];
-                  echo '
-                  <tr class= "tabledelete">
-                    <th scope="row">'.$idnumber1.'</th>
-                    <td>'.$surname.'</td>
-                    <td>'.$firstname.'</td>
-                    <td>'.$occupation.'</td>
-                    <td>'.$gender.'</td>
-                    <td>'.$countrycode.'</td>
-                    <td>'.$areacode.'</td>
-                    <td>'.$mobilenumber.'</td>
-                    <td>
-                      <form name="f2" action="javascript:select();" method="POST">
-                          <button class="btn btn-danger" type="submit" name="deleteid" value="Delete" >Delete</button>
-                      </form>
-                    </td>
-                  </tr>
-                  ';
-                  $i++;
-                }
-              }
-              else{
-                die(mysql_error($con));
-              }
-            }
-            else {
+                                    $sql1="Select * from  `store` where idnumber = $idnumber";
+                                    $selectresult=mysqli_query($con, $sql1);
+                                    $i=1;
+                                    if(isset($_POST['Delete'])){
+                                        header('location:deletefunction.php');
+                                    }
+                                    if($selectresult){
+                                        while($row1=mysqli_fetch_assoc($selectresult)){
+                                        $idnumber1=$row1['idnumber'];
+                                        $surname=$row1['surname'];
+                                        $firstname=$row1['firstname'];
+                                        $occupation=$row1['occupation'];
+                                        $gender=$row1['gender'];
+                                        $countrycode=$row1['countrycode'];
+                                        $areacode=$row1['areacode'];
+                                        $mobilenumber=$row1['mobilenumber'];
+                                        echo '
+                                        <tr class= "tabledelete">
+                                            <th scope="row">'.$idnumber1.'</th>
+                                            <td>'.$surname.'</td>
+                                            <td>'.$firstname.'</td>
+                                            <td>'.$occupation.'</td>
+                                            <td>'.$gender.'</td>
+                                            <td>'.$countrycode.'</td>
+                                            <td>'.$areacode.'</td>
+                                            <td>'.$mobilenumber.'</td>
+                                            <td>
+                                            <form name="f2" action="javascript:select();" method="POST">
+                                                <button class="btn btn-danger" type="submit" name="deleteid" value="Delete" >Delete</button>
+                                            </form>
+                                            </td>
+                                        </tr>
+                                        ';
+                                        $i++;
+                                        }
+                                    }
+                                    else{
+                                        die(mysql_error($con));
+                                    }
+                                    }
+                                    else {
+                                ?>
+                            <div class="errordelete">
+                                <i class="fa-solid fa-triangle-exclamation"><i> </i><label>ID NUMBER DOES NOT
+                                        EXIST</label></i>
+                            </div>
+                            <?php
+                                }
+                            }
                 ?>
-                   <div class="errordelete">
-                      <i class="fa-solid fa-triangle-exclamation"><i> </i><label>ID NUMBER DOES NOT EXIST</label></i>
-                    </div>
-                 <?php
-            }
-          }
-            ?>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <!--End Table-->
+        </div>
+        <!--End Table-->
 
-            <!-- Footer -->
-            <footer class="text-center text-lg-start text-white">
-                <!-- Grid container -->
-                <div class="container p-1 pb-1">
-                    <hr class="my-4">
-                    <!-- Section: Copyright -->
-                    <section class="p-1 pt-1">
-                        <div class="row d-flex align-items-center">
-                            <!-- Grid column -->
-                            <div class="col-md-7 col-lg-8 text-center text-md-start">
-                                <!-- Copyright -->
-                                <div>
-                                    © 2022 Copyright:
-                                    <a class="text-white" href="profile.php">Solmayor & Tuazon</a>
-                                </div>
-                                <!-- Copyright -->
+        <!-- Footer -->
+        <footer class="text-center text-lg-start text-white">
+            <!-- Grid container -->
+            <div class="container p-1 pb-1">
+                <hr class="my-4">
+                <!-- Section: Copyright -->
+                <section class="p-1 pt-1">
+                    <div class="row d-flex align-items-center">
+                        <!-- Grid column -->
+                        <div class="col-md-7 col-lg-8 text-center text-md-start">
+                            <!-- Copyright -->
+                            <div>
+                                © 2022 Copyright:
+                                <a class="text-white" href="profile.php">Solmayor & Tuazon</a>
                             </div>
-
-                            <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
-                                <!-- Facebook -->
-                                <a href="https://web.facebook.com/nexusapplert"
-                                    class="btn btn-outline-light btn-floating m-1 text-white" role="button">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <!-- Twitter -->
-                                <a class="btn btn-outline-light btn-floating m-1 text-white" role="button">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <!-- Google -->
-                                <a class="btn btn-outline-light btn-floating m-1 text-white" role="button">
-                                    <i class="fab fa-google"></i>
-                                </a>
-                                <!-- Instagram -->
-                                <a class="btn btn-outline-light btn-floating m-1 text-white" role="button">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                            </div>
+                            <!-- Copyright -->
                         </div>
-                    </section>
-                </div>
-            </footer>
-        </section>
-        <?php?><script>
-        <?php include 'Script/script.js'; ?>
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-        </script>
 
-        <?php?><script>
-        <?php include 'Script/tilt.jquery.min.js'; ?>
-        </script>
-        <script>
-        $('.js-tilt').tilt({
-            scale: 1.1
-        })
-        </script>
-    </body>
+                        <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+                            <!-- Facebook -->
+                            <a href="https://web.facebook.com/nexusapplert"
+                                class="btn btn-outline-light btn-floating m-1 text-white" role="button">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <!-- Twitter -->
+                            <a class="btn btn-outline-light btn-floating m-1 text-white" role="button">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <!-- Google -->
+                            <a class="btn btn-outline-light btn-floating m-1 text-white" role="button">
+                                <i class="fab fa-google"></i>
+                            </a>
+                            <!-- Instagram -->
+                            <a class="btn btn-outline-light btn-floating m-1 text-white" role="button">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            </div>
+        </footer>
+    </section>
+    <?php?><script>
+    <?php include 'Script/script.js'; ?>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+
+    <?php?><script>
+    <?php include 'Script/tilt.jquery.min.js'; ?>
+    </script>
+    <script>
+    $('.js-tilt').tilt({
+        scale: 1.1
+    })
+    </script>
+</body>
 
 </html>

@@ -6,6 +6,7 @@
       $select_query="Select * from `store` where surname=$surname";
       $result_query=mysqli_query($con, $select_query);
       $row=mysqli_fetch_assoc($result_query);
+      
       $idnumber=$row['idnumber'];
       $surname=$row['surname'];
       $firstname=$row['firstname'];
@@ -13,20 +14,22 @@
       $gender=$row['gender'];
       $countrycode=$row['countrycode'];
       $areacode=$row['areacode'];
-      $mobilenumber=$row['mobilenumber'];    
-
-      
-
-    //   if($result_query){
-    //       while($row=mysqli_fetch_assoc($result_query)){
-                
-            
-    //       }
+      $mobilenumber=$row['mobilenumber'];   
+       
+    //   if(isset($_POST['surnamesubmit'])){
+    //         $idnumber=$_POST['idnumber'];
+    //         $surname=$_POST['surname'];
+    //         $firstname=$_POST['firstname'];
+    //         $occupation=$_POST['occupation'];
+    //         $gender=$_POST['gender'];
+    //         $countrycode=$_POST['countrycode'];
+    //         $areacode=$_POST['areacode'];
+    //         $mobilenumber=$_POST['mobilenumber'];
     //     }
     //     else{
     //       die(mysql_error($con));
     //     }
-  }
+    }
 
 
 ?>
@@ -149,14 +152,7 @@
         <section class="home-section">
 
             <div class="container text-white">
-
-                <?php
-                    echo '
-                    <h1>'.$mobile.'</h1>
-                    ';
-
-                   ?>
-
+                <h1><?php echo $surname ?></h1>
             </div>
 
 

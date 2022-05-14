@@ -8,18 +8,22 @@ if (isset($_POST["surnamesubmit"])) {
         $result=mysqli_query($con,$select_query);
 
         if(mysqli_num_rows($result)>0){
-            // while($row=mysqli_fetch_assoc($select_query)){
-            //     echo ['surname'];
-            // }
-            echo "<script>alert('Surname exist!')</script>";
-            echo "<script>window.open('searchsurname.php', '_self')</script>";
+            // echo "<script>window.open('selectsearch.php', '_self')</script>";
+            echo'
+                
+            
+            ';
+
         }
         else{
-            echo"<script>alert('Surname not exist!')</script>";
-            echo "<script>window.open('selectsearch.php', '_self')</script>";
+            echo"<script>
+                    alert('Surname not exist!')
+                    window.open('selectsearch.php', '_self')
+                </script>";
         }
     }
    
+
 ?>
 
 <!DOCTYPE html>
@@ -39,6 +43,7 @@ if (isset($_POST["surnamesubmit"])) {
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 
     <style>
     <?php include 'css/style.css';
@@ -119,8 +124,6 @@ if (isset($_POST["surnamesubmit"])) {
         </div>
     </div>
     <section class="home-section">
-
-
         <!-- main page -->
         <div class="main-text">
             <!-- <img src="https://html.sammy-codes.com/images/small-profile.jpeg" class="main-page"> -->
@@ -130,14 +133,41 @@ if (isset($_POST["surnamesubmit"])) {
                     <h3>Whom are you looking for?</h3>
                     <form action="" method="POST">
                         <div class="search">
-                            <i style="color: black;" class="fa fa-search"></i>
                             <input type="text" class="form-control" placeholder="Enter Surname" name="surnamesearch">
-                        </div>
-                        <div class="search-menu-1">
-                            <div class="field">
-                                <button type="submit" class='button ice' name="surnamesubmit">Search</button>
-                                <!-- <a href="searchsurname.php?surnamesubmit='.$surname.'" class='button ice'
+                            <div class="search-menu-2">
+                                <div class="field">
+
+                                    <button type="submit" class='button2 ice2' data-toggle="modal"
+                                        data-target="#exampleModalLong">Search</button>
+                                    <!-- <a href="searchsurname.php?surnamesubmit='.$surname.'" class='button ice'
                                     name="surnamesubmit" type="submit" role="button">Search</a> -->
+
+
+                                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    ...
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -322,8 +352,10 @@ if (isset($_POST["surnamesubmit"])) {
             </div>
         </footer>
     </section>
-    <?php?><script>
+    <script>
     <?php include 'Script/script.js'; ?>
+    </script>
+    <script>
     </script>
 </body>
 
