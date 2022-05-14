@@ -130,7 +130,7 @@
         </div>
         <section class="home-section">
 
-            <!--Search Box-->
+            <!--Search Box With Button-->
             <br><br>
             <div class="SDbutton">
                 <form class="SDbutton" style="margin:auto;max-width:250px" method="post">

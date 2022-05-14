@@ -1,8 +1,35 @@
 <?php
-    
-    include 'Connect.php';
+ include('Connect.php');
+ if(isset($_GET['surname_id'])){
+  $uid=$_GET['surname_id'];
+  $sql="Select * from store where id=$uid";
+  $result=mysqli_query($con,$sql);
+  $row=mysqli_fetch_assoc($result);
+  $idnumber=$row['idnumber'];
+  $surname=$row['surname'];
+  $firstname=$row['firstname'];
+  $occupation=$row['occupation'];
+  $gender=$row['gender'];
+  $countrycode=$row['countrycode'];
+  $areacode=$row['areacode'];
+  $mobilenumber=$row['mobilenumber'];
 
   
+//   if(isset($_POST['submit'])){
+//   $username=$_POST['username'];
+//   $email=$_POST['email'];
+//   $mobile=$_POST['mobile'];
+
+//   $update_query="update crud set username='$username', email='$email', mobile='$mobile' where id=$uid";
+//     $result=mysqli_query($con,$update_query);
+//     if($result){
+//    echo "<script>window.open('display.php','_self')</script>";
+//     }else{
+//       die (mysqli_error($con));
+//     }
+ 
+//   }
+// }
 ?>
 
 <!DOCTYPE html>
@@ -103,82 +130,19 @@
       </div>
     <section class="home-section">
 
-
-      <!--Table-->
-            <div class="container pt-5">
-                <div class="table-responsive delete-data-design ">
-                    <table class="table table text-white">
-                        <thead>
-                            <tr>
-                                <th scope="col">ID Number</th>
-                                <th scope="col">Surname</th>
-                                <th scope="col">First Name</th>
-                                <th scope="col">Occupation</th>
-                                <th scope="col">Gender</th>
-                                <th scope="col">Country Code</th>
-                                <th scope="col">Area Code</th>
-                                <th scope="col">Mobile Number</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-              
-            <?php
-              if(isset($_POST['submit'])){
-              if($row){
-
-              $sql1="Select * from  `store` where surname = $surname";
-              $selectresult=mysqli_query($con, $sql1);
-              $i=1;
-              if($selectresult){
-                while($row1=mysqli_fetch_assoc($selectresult)){
-                  $idnumber1=$row1['idnumber'];
-                  $surname=$row1['surname'];
-                  $firstname=$row1['firstname'];
-                  $occupation=$row1['occupation'];
-                  $gender=$row1['gender'];
-                  $countrycode=$row1['countrycode'];
-                  $areacode=$row1['areacode'];
-                  $mobilenumber=$row1['mobilenumber'];
-                  echo '
-                  <tr class= "tabledelete">
-                    <th scope="row">'.$idnumber1.'</th>
-                    <td>'.$surname.'</td>
-                    <td>'.$firstname.'</td>
-                    <td>'.$occupation.'</td>
-                    <td>'.$gender.'</td>
-                    <td>'.$countrycode.'</td>
-                    <td>'.$areacode.'</td>
-                    <td>'.$mobilenumber.'</td>
-                  </tr>
-                  ';
-                  $i++;
-                }
-              }
-              else{
-                die(mysql_error($con));
-              }
-            }
-            else {
-                ?>
-                   <div class="errordelete">
-                      <i class="fa-solid fa-triangle-exclamation"><i> </i><label>DATA DOES NOT EXIST</label></i>
-                    </div>
-                 <?php
-            }
-          }
-            ?>
-
-
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <!--End Table-->
-
-
-
-
+      <div class="text-white">
+          <?php
+              $idnumber=$row['idnumber'];
+              $surname=$row['surname'];
+              $firstname=$row['firstname'];
+              $occupation=$row['occupation'];
+              $gender=$row['gender'];
+              $countrycode=$row['countrycode'];
+              $areacode=$row['areacode'];
+              $mobilenumber=$row['mobilenumber'];
+          ?>
+      </div>
+    
 
 
 <!-- Footer -->

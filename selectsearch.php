@@ -1,17 +1,16 @@
-<?php
-   
-    include 'Connect.php';
-    $surname = "";
-    
 
-    if(isset($_POST['submit']))
-    {
-      $surname = $_POST['surname'];
-      $choice = $_POST['choice'];
-      $sql1="select * from `store` where surname = $surname";
-      $result = mysqli_query($con, $sql1);
-      $row=mysqli_fetch_assoc($result);
-    }
+<?php
+
+include 'Connect.php';
+
+if (isset($_POST["update_id"])) {
+    $str = $_POST["store"];
+    $sth = $con->prepare("SELECT * FROM store WHERE surname = '$str'");
+
+    $sth->setFetchMode(PDO:: FETCH_OBJ);
+    $sth -> execute();
+
+   
 ?>
 
 <!DOCTYPE html>
@@ -123,92 +122,15 @@
                     <div class="search">
                         <i style="color: black;" class="fa fa-search"></i>
                         <input type="text" class="form-control" placeholder="Enter Surname">
-                        <button name="submit" type="submit">Search</button>
                     </div>
+
                     <div class="search-menu-1">
                         <div class="field">
-                            <a href="searchsurname.php" class="button ice" role="button" name="submit" type="submit">Search</a>
+                                <button class='button ice'> <a href='searchsurname.php?update_id=$id'>Search</button>
                         </div>
                     </div>
+
                 </div>
-
-
-
-                <!--Table
-            <div class="container pt-5">
-                <div class="table-responsive delete-data-design ">
-                    <table class="table table text-white">
-                        <thead>
-                            <tr>
-                                <th scope="col">ID Number</th>
-                                <th scope="col">Surname</th>
-                                <th scope="col">First Name</th>
-                                <th scope="col">Occupation</th>
-                                <th scope="col">Gender</th>
-                                <th scope="col">Country Code</th>
-                                <th scope="col">Area Code</th>
-                                <th scope="col">Mobile Number</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-            <?php
-              if(isset($_POST['submit'])){
-              if($row){
-
-              $sql1="Select * from  `store` where surname = $surname";
-              $selectresult=mysqli_query($con, $sql1);
-              $i=1;
-              if($selectresult){
-                while($row1=mysqli_fetch_assoc($selectresult)){
-                  $idnumber1=$row1['idnumber'];
-                  $surname=$row1['surname'];
-                  $firstname=$row1['firstname'];
-                  $occupation=$row1['occupation'];
-                  $gender=$row1['gender'];
-                  $countrycode=$row1['countrycode'];
-                  $areacode=$row1['areacode'];
-                  $mobilenumber=$row1['mobilenumber'];
-                  echo '
-                  <tr class= "tabledelete">
-                    <th scope="row">'.$idnumber1.'</th>
-                    <td>'.$surname.'</td>
-                    <td>'.$firstname.'</td>
-                    <td>'.$occupation.'</td>
-                    <td>'.$gender.'</td>
-                    <td>'.$countrycode.'</td>
-                    <td>'.$areacode.'</td>
-                    <td>'.$mobilenumber.'</td>
-                    <td>
-                  </tr>
-                  ';
-                  $i++;
-                }
-              }
-              else{
-                die(mysql_error($con));
-              }
-            }
-            else {
-                ?>
-                   <div class="errordelete">
-                      <i class="fa-solid fa-triangle-exclamation"><i> </i><label>DATA DOES NOT EXIST</label></i>
-                    </div>
-                 <?php
-            }
-          }
-            ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            End Table-->
-
-
-
-
-
-
 
 
 
