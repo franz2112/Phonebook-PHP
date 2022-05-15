@@ -1,29 +1,25 @@
 <?php
 
 include 'Connect.php';
+$select_query = "select * from store";
+$result=mysqli_query($con,$select_query);
 
-if (isset($_POST["surnamesubmit"])) {
-        $surname = $_POST['surnamesearch'];
-        $select_query = "select * from store where surname='$surname'";
-        $result=mysqli_query($con,$select_query);
+// if (isset($_POST["surnamesubmit"])) {
+//         $surname = $_POST['surnamesearch'];
+//         $select_query = "select * from store where surname='$surname'";
+//         $result=mysqli_query($con,$select_query);
 
-        if(mysqli_num_rows($result)>0){
-            // echo "<script>window.open('selectsearch.php', '_self')</script>";
-            echo'
-                
-            
-            ';
-
-        }
-        else{
-            echo"<script>
-                    alert('Surname not exist!')
-                    window.open('selectsearch.php', '_self')
-                </script>";
-        }
-    }
-   
-
+//         if(mysqli_num_rows($result)>0){
+//             // echo "<script>window.open('selectsearch.php', '_self')</script>";
+//             echo'';
+//         }
+//         else{
+//             echo"<script>
+//                     alert('Surname not exist!')
+//                     window.open('selectsearch.php', '_self')
+//                 </script>";
+//         }
+//     }
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +31,15 @@ if (isset($_POST["surnamesubmit"])) {
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <title>View Search</title>
+    <!-- local links -->
+    <style>
+    <?php include 'css/style.css';
+    ?>
+    </style>
+
+    <link rel="stylesheet" href="css/CSS.css">
+
+    <!-- local links -->
 
     <!-- Fontawsome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -46,6 +50,7 @@ if (isset($_POST["surnamesubmit"])) {
     <!-- Fontawsome -->
 
     <!-- bootstraps -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -53,20 +58,13 @@ if (isset($_POST["surnamesubmit"])) {
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- bootstraps -->
 
-
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <!-- Boxicons CDN Link -->
 
-    <!-- local links -->
-    <style>
-    <?php include 'css/style.css';
-    ?>
-    </style>
+    <title>View Search</title>
 
-    <link rel="stylesheet" href="css/CSS.css">
 
-    <!-- local links -->
 
 </head>
 
@@ -156,9 +154,9 @@ if (isset($_POST["surnamesubmit"])) {
     <section class="home-section">
         <!-- main page -->
         <div class="main-text">
-
-            <!-- <img src="https://html.sammy-codes.com/images/small-profile.jpeg" class="main-page"> -->
             <div class="container-xxl">
+
+                <!-- Search by Surname  -->
                 <div class="search-bg-meaning">
                     <h1>Search by Surname</h1>
                     <h3>Whom are you looking for?</h3>
@@ -181,6 +179,7 @@ if (isset($_POST["surnamesubmit"])) {
                     </form>
                 </div>
 
+                <!-- Search by Country  -->
                 <div class="search-bg-meaning">
                     <h1>Search by Country</h1>
                     <table class="table text-white">
@@ -255,7 +254,9 @@ if (isset($_POST["surnamesubmit"])) {
                         </div>
                     </div>
                 </div>
+                <!-- Search by Country  -->
 
+                <!-- Student Data -->
                 <div class="table-responsive data-design">
                     <table class="table table text-white">
                         <h1>Student Data</h1>
@@ -272,47 +273,48 @@ if (isset($_POST["surnamesubmit"])) {
                             </tr>
                         </thead>
                         <tbody>
+                            <!--PHP Display Table-->
+                            <?php
+                                $select_query="Select * from store";
+                                $result=mysqli_query($con,$select_query);
+                                $i=1;
+                                if($result){
+                                    while ($row=mysqli_fetch_assoc($result)) {
+                                        $idnumber=$row['idnumber'];
+                                        $surname=$row['surname'];
+                                        $firstname=$row['firstname'];
+                                        $occupation=$row['occupation'];
+                                        $gender=$row['gender'];
+                                        $countrycode=$row['countrycode'];
+                                        $areacode=$row['areacode'];
+                                        $mobilenumber=$row['mobilenumber'];
+                                        echo " <tr> 
+                                            <th>$idnumber</th>
+                                            <td>$surname</td>
+                                            <td>$firstname</td>
+                                            <td>$occupation</td>
+                                            <td>$gender</td>
+                                            <td>$countrycode</td>
+                                            <td>$areacode</td>
+                                            <td>$mobilenumber</td>
+                                            <td class='text-center'>
+                                        </td>
+                                        </tr>";
+                                        $i++;
+                                    }
+                                }
+                                else{
+                                    die(mysqli_error($con));
+                                }
+                            ?>
+                        </tbody>
+                    </table>
                 </div>
-
-                <!--PHP Display Table-->
-                <?php
-                    $select_query="Select * from store";
-                    $result=mysqli_query($con,$select_query);
-                    $i=1;
-                    if($result){
-                        while ($row=mysqli_fetch_assoc($result)) {
-                            $idnumber=$row['idnumber'];
-                            $surname=$row['surname'];
-                            $firstname=$row['firstname'];
-                            $occupation=$row['occupation'];
-                            $gender=$row['gender'];
-                            $countrycode=$row['countrycode'];
-                            $areacode=$row['areacode'];
-                            $mobilenumber=$row['mobilenumber'];
-                            echo " <tr> 
-                                <th>$idnumber</th>
-                                <td>$surname</td>
-                                <td>$firstname</td>
-                                <td>$occupation</td>
-                                <td>$gender</td>
-                                <td>$countrycode</td>
-                                <td>$areacode</td>
-                                <td>$mobilenumber</td>
-                                <td class='text-center'>
-                            </td>
-                            </tr>";
-                            $i++;
-                        }
-                    }
-                    else{
-                        die(mysqli_error($con));
-                    }
-                ?>
-                </table>
+                <!--End Student Data -->
             </div>
+            <!-- Container xxl end -->
         </div>
-        </div>
-        <!--End Display-->
+        <!--Main-text-->
 
         <!-- Footer -->
         <footer class="text-center text-lg-start text-white">
@@ -336,7 +338,7 @@ if (isset($_POST["surnamesubmit"])) {
                             <!-- Facebook -->
                             <a href="https://web.facebook.com/nexusapplert"
                                 class="btn btn-outline-light btn-floating m-1 text-white" role="button">
-                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-facebook"></i>
                             </a>
                             <!-- Twitter -->
                             <a class="btn btn-outline-light btn-floating m-1 text-white" role="button">
@@ -378,6 +380,9 @@ if (isset($_POST["surnamesubmit"])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 
 </body>
 

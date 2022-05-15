@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
@@ -157,59 +158,59 @@
                         </thead>
                         <tbody>
                             <?php
-                                    if(isset($_POST['submit'])){
-                                    if($row){
+                                if(isset($_POST['submit'])){
+                                if($row){
 
-                                    $sql1="Select * from  `store` where idnumber = $idnumber";
-                                    $selectresult=mysqli_query($con, $sql1);
-                                    $i=1;
-                                    if(isset($_POST['Delete'])){
-                                        header('location:deletefunction.php');
+                                $sql1="Select * from  `store` where idnumber = $idnumber";
+                                $selectresult=mysqli_query($con, $sql1);
+                                $i=1;
+                                if(isset($_POST['Delete'])){
+                                    header('location:deletefunction.php');
+                                }
+                                if($selectresult){
+                                    while($row1=mysqli_fetch_assoc($selectresult)){
+                                    $idnumber1=$row1['idnumber'];
+                                    $surname=$row1['surname'];
+                                    $firstname=$row1['firstname'];
+                                    $occupation=$row1['occupation'];
+                                    $gender=$row1['gender'];
+                                    $countrycode=$row1['countrycode'];
+                                    $areacode=$row1['areacode'];
+                                    $mobilenumber=$row1['mobilenumber'];
+                                    echo '
+                                    <tr class= "tabledelete">
+                                        <th scope="row">'.$idnumber1.'</th>
+                                        <td>'.$surname.'</td>
+                                        <td>'.$firstname.'</td>
+                                        <td>'.$occupation.'</td>
+                                        <td>'.$gender.'</td>
+                                        <td>'.$countrycode.'</td>
+                                        <td>'.$areacode.'</td>
+                                        <td>'.$mobilenumber.'</td>
+                                        <td>
+                                        <form name="f2" action="javascript:select();" method="POST">
+                                            <button class="btn btn-danger" type="submit" name="deleteid" value="Delete" >Delete</button>
+                                        </form>
+                                        </td>
+                                    </tr>
+                                    ';
+                                    $i++;
                                     }
-                                    if($selectresult){
-                                        while($row1=mysqli_fetch_assoc($selectresult)){
-                                        $idnumber1=$row1['idnumber'];
-                                        $surname=$row1['surname'];
-                                        $firstname=$row1['firstname'];
-                                        $occupation=$row1['occupation'];
-                                        $gender=$row1['gender'];
-                                        $countrycode=$row1['countrycode'];
-                                        $areacode=$row1['areacode'];
-                                        $mobilenumber=$row1['mobilenumber'];
-                                        echo '
-                                        <tr class= "tabledelete">
-                                            <th scope="row">'.$idnumber1.'</th>
-                                            <td>'.$surname.'</td>
-                                            <td>'.$firstname.'</td>
-                                            <td>'.$occupation.'</td>
-                                            <td>'.$gender.'</td>
-                                            <td>'.$countrycode.'</td>
-                                            <td>'.$areacode.'</td>
-                                            <td>'.$mobilenumber.'</td>
-                                            <td>
-                                            <form name="f2" action="javascript:select();" method="POST">
-                                                <button class="btn btn-danger" type="submit" name="deleteid" value="Delete" >Delete</button>
-                                            </form>
-                                            </td>
-                                        </tr>
-                                        ';
-                                        $i++;
-                                        }
-                                    }
-                                    else{
-                                        die(mysql_error($con));
-                                    }
-                                    }
-                                    else {
-                                ?>
+                                }
+                                else{
+                                    die(mysql_error($con));
+                                }
+                                }
+                                else {
+                            ?>
                             <div class="errordelete">
                                 <i class="fa-solid fa-triangle-exclamation"><i> </i><label>ID NUMBER DOES NOT
                                         EXIST</label></i>
                             </div>
                             <?php
+                                    }
                                 }
-                            }
-                ?>
+                            ?>
                         </tbody>
                     </table>
                 </div>

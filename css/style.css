@@ -441,7 +441,12 @@ option {
 }
 
 footer {
-    margin-top: 50px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+footer a {
+    font-size: 12pt;
 }
 
 footer a:hover i {
