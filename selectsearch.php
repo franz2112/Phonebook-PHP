@@ -37,35 +37,62 @@ if (isset($_POST["surnamesubmit"])) {
 
     <title>View Search</title>
 
-    <link rel="stylesheet" href="css/CSS.css">
-
+    <!-- Fontawsome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Fontawsome -->
+
+    <!-- bootstraps -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- bootstraps -->
 
+
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Boxicons CDN Link -->
+
+    <!-- local links -->
     <style>
     <?php include 'css/style.css';
     ?>
     </style>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/CSS.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Boxicons CDN Link -->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-
-    <script src="https://kit.fontawesome.com/6a478048bc.js" crossorigin="anonymous"></script>
+    <!-- local links -->
 
 </head>
 
 <body style="background-color: #ffe2c9;">
-
+    <!-- Modal -->
+    <div class="container">
+        <div class="row">
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered ">
+                    <div class="modal-content text-dark">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Hello everyone
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btnmodals btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--<video autoplay muted loop class="myVideo">
         <source src="bg1.mp4" type="video/mp4">
     </video>-->
@@ -123,9 +150,13 @@ if (isset($_POST["surnamesubmit"])) {
             </ul>
         </div>
     </div>
+
+
+
     <section class="home-section">
         <!-- main page -->
         <div class="main-text">
+
             <!-- <img src="https://html.sammy-codes.com/images/small-profile.jpeg" class="main-page"> -->
             <div class="container-xxl">
                 <div class="search-bg-meaning">
@@ -136,44 +167,18 @@ if (isset($_POST["surnamesubmit"])) {
                             <input type="text" class="form-control" placeholder="Enter Surname" name="surnamesearch">
                             <div class="search-menu-2">
                                 <div class="field">
-
-                                    <button type="submit" class='button2 ice2' data-toggle="modal"
-                                        data-target="#exampleModalLong">Search</button>
+                                    <button type="button" class='button2 ice2' data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">Search</button>
                                     <!-- <a href="searchsurname.php?surnamesubmit='.$surname.'" class='button ice'
                                     name="surnamesubmit" type="submit" role="button">Search</a> -->
-
-
-                                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    ...
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
+                                    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
+                                        Launch demo modal
+                                    </button> -->
                                 </div>
                             </div>
                         </div>
                     </form>
-
-
-
                 </div>
 
                 <div class="search-bg-meaning">
@@ -352,11 +357,28 @@ if (isset($_POST["surnamesubmit"])) {
             </div>
         </footer>
     </section>
+
+
     <script>
     <?php include 'Script/script.js'; ?>
     </script>
+
     <script>
     </script>
+
+    <script src="https://kit.fontawesome.com/6a478048bc.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
 </body>
 
 </html>

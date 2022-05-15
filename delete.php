@@ -55,7 +55,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
     <title>Delete</title>
 
@@ -239,7 +239,7 @@
                             <!-- Facebook -->
                             <a href="https://web.facebook.com/nexusapplert"
                                 class="btn btn-outline-light btn-floating m-1 text-white" role="button">
-                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-facebook"></i>
                             </a>
                             <!-- Twitter -->
                             <a class="btn btn-outline-light btn-floating m-1 text-white" role="button">
