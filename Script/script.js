@@ -86,9 +86,51 @@ var video = document.getElementById("myVideo");
 
 //modals
 
-var myModal = document.getElementById('myModal')
-var myInput = document.getElementById('myInput')
+$(document).ready(function() {
 
-myModal.addEventListener('shown.bs.modal', function() {
-    myInput.focus()
-})
+    $('#insert_form').on("submit", function(event) {
+        event.preventDefault();
+        if ($('#name').val() == "") {
+            alert("Name is required");
+        } else if ($('#address').val() == '') {
+            alert("Address is required");
+        } else if ($('#designation').val() == '') {
+            alert("Designation is required");
+        } else {
+            $.ajax({
+                url: "insert.php",
+                method: "POST",
+                data: $('#insert_form').serialize(),
+                beforeSend: function() {
+                    $('#insert').val("Inserting");
+                },
+                success: function(data) {
+                    $('#insert_form')[0].reset();
+                    $('#add_data_Modal').modal('hide');
+                    $('#employee_table').html(data);
+                }
+            });
+        }
+    });
+
+
+
+    // view details
+    $(document).on('click', '.view_data', function() {
+        $('#dataModal').modal();
+        var employee_id = $(this).attr("surnamesubmit");
+
+        $.ajax({
+            url: "selectsurname.php",
+            method: "POST",
+            data: { employee_id: employee_id },
+            success: function(data) {
+                $('#employee_detail').html(data);
+                $('#add_data_Modal').modal('show');
+            }
+        });
+    });
+});
+
+
+//other modals

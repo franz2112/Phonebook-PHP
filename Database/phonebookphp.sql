@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2022 at 06:32 PM
+-- Generation Time: May 16, 2022 at 05:07 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.28
 
@@ -40,6 +40,7 @@ CREATE TABLE `phonebook` (
 --
 
 CREATE TABLE `store` (
+  `id` int(255) NOT NULL,
   `idnumber` varchar(255) NOT NULL,
   `surname` varchar(255) NOT NULL,
   `firstname` varchar(255) NOT NULL,
@@ -54,8 +55,16 @@ CREATE TABLE `store` (
 -- Dumping data for table `store`
 --
 
-INSERT INTO `store` (`idnumber`, `surname`, `firstname`, `occupation`, `gender`, `countrycode`, `areacode`, `mobilenumber`) VALUES
-('0211', 'Tuazon', ' Fritz', 'IT', 'male', 63, 9506, '09105344829');
+INSERT INTO `store` (`id`, `idnumber`, `surname`, `firstname`, `occupation`, `gender`, `countrycode`, `areacode`, `mobilenumber`) VALUES
+(1, '0211', 'Tuazon', ' Fritz', 'Web Developer', 'male', 63, 9506, '09105344829'),
+(2, '1', 'Tuna', 'Gil Jason', 'IT', 'male', 63, 9506, '091234567889'),
+(3, '2', 'Solmayor', 'Francis', 'IT', 'male', 62, 9506, '091234567889'),
+(4, '3', 'Paulo', 'Kernel', 'IT', 'male', 60, 9506, '091234567889'),
+(5, '4', 'Mahilum', 'Earl', 'IT', 'male', 63, 9506, '09105344829'),
+(6, '5', 'Esteves', 'Christian', 'IT', 'male', 60, 9506, '0973853495'),
+(7, '6', 'Panzo', 'Jasper', 'IT', 'male', 65, 9506, '091234567889'),
+(8, '7', 'Montilla', 'Regin', 'IT', 'male', 65, 9506, '091234567889'),
+(9, '8', 'Asumbra', 'Johhny', 'IT', 'male', 62, 9506, '09105344829');
 
 -- --------------------------------------------------------
 
@@ -84,7 +93,7 @@ ALTER TABLE `phonebook`
 -- Indexes for table `store`
 --
 ALTER TABLE `store`
-  ADD PRIMARY KEY (`idnumber`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -101,6 +110,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `phonebook`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `store`
+--
+ALTER TABLE `store`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`

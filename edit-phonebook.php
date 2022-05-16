@@ -42,42 +42,55 @@
 
 ?>
 
+<!doctype html>
+<html lang="en">
 
-<!DOCTYPE html>
-<html>
 <head>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
-      </script>
-
-  <!-- Required meta tags -->
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
     <style>
     <?php include 'css/style.css';
     ?>
     </style>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
     <script src="https://kit.fontawesome.com/6a478048bc.js" crossorigin="anonymous"></script>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
 
-  <title>Edit Data</title>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Store</title>
 </head>
+
 <body>
-<!--VIDEO BG-->
+    <!--VIDEO BG
     <video autoplay muted loop class="myVideo">
         <source src="bg1.mp4" type="video/mp4">
-    </video>
+    </video>-->
     <!--End of Video BG-->
     <div class="container">
         <div class="sidebar">
@@ -137,100 +150,86 @@
             </ul>
         </div>
     </div>
-  <form method="post">
-    <section class="contact">
-    <div class="container py-5">
-      <div class="row">
 
-              <div class="form py-3">
-                <div class="form-row my-4">
-                  <div class="col-lg-6">
-                    <label>Student Number</label>
-                    <input type="text" required="required" class="effect-1" placeholder="Enter Student Number" name="idnumber" 
-                    value="<?php echo $idnumber;?>">
-                    <span class="Focus-border"></span>
-                  </div>
-                  <div class="col-lg-6">
-                    <label>Surname</label>
-                    <input type="text" required="required" class="effect-1" placeholder="Enter Surname" name="surname"
-                    value="<?php echo $surname;?>">
-                    <span class="Focus-border"></span>
-                  </div>
-                </div>
-                <div class="form-row">
-                  <div class="col-lg-6">
-                    <label>First Name</label>
-                    <input type="text" required="required" class="effect-1" placeholder="Enter First Name" name="firstname" 
-                    value="<?php echo $firstname;?>">
-                    <span class="Focus-border"></span>
-                  </div>
-                  <div class="col-lg-6">
-                    <label>Occupation</label>
-                    <input type="text" required="required" class="effect-1" placeholder="Enter Occupation" name="occupation" 
-                    value="<?php echo $occupation;?>">
-                    <span class="Focus-border"></span>
-                  </div>
-                </div>
-                <div class="form-row pt-5">
-                  <div class="col-lg-6 pl-5">
+    <!-- content -->
+    <section class="home-section">
 
-                    <div class="form-group">
-                        <select type="dropdown" id="set_gender" required="required" class="text-area3" name="gender">
-                              <option value="male" >Male</option>
-                              <option value="female" >Female</option>
-                        </select>
+        <!-- main page -->
+        <div class="store-input">
+            <div class="container-xxl">
+                <div class="main-menu-bg">
+                    <div class="form-contain">
+                        <div class="map js-tilt-reverse" data-tilt>
+                            <img src="img/map5.png" alt="img">
+                        </div>
                     </div>
-                    <span class="Focus-border"></span>
-                  </div>
-                  <div class="col-lg-6">
-                
-                    <div class="form-group">
-                        <select type="dropdown" id="set_country" required="required" class="text-area3" name="countrycode">
-                              <option value="60" >Malaysia - 60</option>
-                              <option value="62">Indonesia - 62</option>
-                              <option value="63">Philippines - 63</option>
-                              <option value="65">Singapore - 65</option>
-                              <option value="66">Thailand - 66</option>
-                              <option value="84">Vietnam - 84</option>
-                              <option value="673">Brunei Darussalam - 673</option>
-                              <option value="855">Cambodia - 855</option>
-                              <option value="856">Lao - 856</option>
-                              <option value="95">Myanmar - 95</option>
-                              <option value="670">Timor Leste - 670</option>
-                        </select>
-         
-                    </div>
-                    <span class="Focus-border"></span>
-                  </div>
+                    <form method="post" class="form-details">
+                        <div class="form-group">
+                            <label> Student Number </label>
+                            <input type="varchar" required="required" class="text-area"
+                                placeholder="Enter Student Number" name="idnumber" value="<?php echo $idnumber;?>">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label> Surname </label> <label class="indent3">Firstname</label> <br>
+                            <input type="varchar" required="required" class="text-area1" placeholder="Enter Surname"
+                                name="surname" value="<?php echo $surname;?>">
+                            <input type="varchar" required="required" class="text-area1" placeholder="Enter First Name"
+                                name="firstname" value="<?php echo $firstname;?>">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label> Occupation </label> <label class="indent2">Gender</label> <br>
+                            <input type="varchar" required="required" class="text-area2" placeholder="Enter Occupation"
+                                name="occupation" value="<?php echo $occupation;?>">
+                            <input type="radio" name="gender" value="male"
+                                <?php if ($gender == "male") echo 'checked="checked"'; ?>>
+                            <label for="html">Male</label> &nbsp
+                            <input type="radio" name="gender" value="female"
+                                <?php if ($gender == "female") echo 'checked="checked"'; ?>>
+                            <label for="css">Female</label>
+                            <br>
+                            <br>
+                            <div class="form-group">
+                                <label> Country Code</label> <label class="indent">Area Code </label> <br>
+                                <select type="dropdown" id="set_country" required="required" class="text-area3"
+                                    name="countrycode">
+                                    <option selected>-Select Country Code-</option>
+                                    <option value="60">Malaysia - 60</option>
+                                    <option value="62">Indonesia - 62</option>
+                                    <option value="63">Philippines - 63</option>
+                                    <option value="65">Singapore - 65</option>
+                                    <option value="66">Thailand - 66</option>
+                                    <option value="84">Vietnam - 84</option>
+                                    <option value="673">Brunei Darussalam - 673</option>
+                                    <option value="855">Cambodia - 855</option>
+                                    <option value="856">Lao - 856</option>
+                                    <option value="95">Myanmar - 95</option>
+                                    <option value="670">Timor Leste - 670</option>
+                                </select>
+                                <input type="int" required="required" class="text-area3" placeholder="Enter Area Code"
+                                    name="areacode" value="<?php echo $areacode;?>">
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label> Mobile number </label>
+                                <input type="int" required="required" class="text-area"
+                                    placeholder="Enter Mobile Number" name="mobilenumber"
+                                    value="<?php echo $mobilenumber;?>">
+                            </div>
+                            <br>
+                            <div class="search-menu-submit">
+                                <!-- <a href="searchcountry.php" class="button ice" role="button">Search</a> -->
+                                <button name="submit" type="submit" class="button ice" role="button">Submit</button>
+                            </div>
+                    </form>
                 </div>
-                <div class="form-row pt-2">
-                  <div class="col-lg-6">
-                    <label>Area Code</label>
-                    <input type="text" required="required" class="effect-1" placeholder="Enter Area Code" name="areacode" 
-                    value="<?php echo $areacode;?>">
-                    <span class="Focus-border"></span>
-                  </div>
-                  <div class="col-lg-6">
-                    <label>Mobile</label>
-                    <input type="text" required="required" class="effect-1" placeholder="Enter Mobile" name="mobilenumber" maxlength="15"
-                    value="<?php echo $mobilenumber;?>">
-                    <span class="Focus-border"></span>
-                  </div>
-                </div>
-                <div class="form-row pt-4 mx-auto">
-                  <div class="col-lg-6">
-                  </div>
-                  <div class="offset-2 col-lg-4 pt-2">
-                    <button type="submit" class="btn1" name="submit" >Update</button>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
+            <!-- <div class="container">     
+            </div> -->
         </div>
-      </div>
-    </div>
-    <!-- Footer -->
+
+        <!-- Footer -->
         <footer class="text-center text-lg-start text-white">
             <!-- Grid container -->
             <div class="container p-1 pb-1">
@@ -267,19 +266,31 @@
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </div>
-
                     </div>
                 </section>
             </div>
         </footer>
-  </section>
-  </form>
-  <script> 
-
+    </section>
+    <script>
     $('#set_country').val("<?php echo $countrycode; ?>").change();
-    $('#set_gender').val("<?php echo $gender; ?>").change(); 
+    $('#set_gender').val("<?php echo $gender; ?>").change();
+    </script>
+    <?php?><script>
+    <?php include 'Script/script.js'; ?>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
 
-  </script>
+    <?php?>
+    <script>
+    <?php include 'Script/tilt.jquery.min.js'; ?>
+    </script>
+    <script>
+    $('.js-tilt').tilt({
+        scale: 1.1
+    })
+    </script>
+</body>
 
-  </body>
-  </html>
+</html>

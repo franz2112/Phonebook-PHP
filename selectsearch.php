@@ -69,28 +69,8 @@ $result=mysqli_query($con,$select_query);
 </head>
 
 <body style="background-color: #ffe2c9;">
-    <!-- Modal -->
-    <div class="container">
-        <div class="row">
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered ">
-                    <div class="modal-content text-dark">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            Hello everyone
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btnmodals btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+
     <!--<video autoplay muted loop class="myVideo">
         <source src="bg1.mp4" type="video/mp4">
     </video>-->
@@ -162,11 +142,16 @@ $result=mysqli_query($con,$select_query);
                     <h3>Whom are you looking for?</h3>
                     <form action="" method="POST">
                         <div class="search">
-                            <input type="text" class="form-control" placeholder="Enter Surname" name="surnamesearch">
+                            <?php
+                            if($row = mysqli_fetch_array($result))
+                            {
+                            ?>
+                            <input type="text" class="form-control" placeholder="Enter Surname" name="surnamesearch"
+                                id="surnamesearching">
                             <div class="search-menu-2">
                                 <div class="field">
-                                    <button type="button" class='button2 ice2' data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">Search</button>
+                                    <button type="button" class='button2 ice2 view_data' data-bs-toggle="modal"
+                                        data-bs-target="#data_Modal" id="<?php echo $row['surname']; ?>">Search</button>
                                     <!-- <a href="searchsurname.php?surnamesubmit='.$surname.'" class='button ice'
                                     name="surnamesubmit" type="submit" role="button">Search</a> -->
                                     <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -175,6 +160,9 @@ $result=mysqli_query($con,$select_query);
                                     </button> -->
                                 </div>
                             </div>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </form>
                 </div>
@@ -360,12 +348,52 @@ $result=mysqli_query($con,$select_query);
         </footer>
     </section>
 
+    <!-- Modal -->
+    <div class="modal fade" id="data_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered ">
+            <div class="modal-content text-dark">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Search Surname</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="searchdetails">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btnmodals btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
-    <?php include 'Script/script.js'; ?>
+    $(document).ready(function() {
+        $(document).on('click', '.view_data', function() {
+            var employee_id = $(this).attr('surname');
+
+            $.ajax({
+                type: "POST",
+                url: "selectsurname.php",
+                data: {
+                    employee_id: employee_id
+                },
+                success: function(data) {
+                    $('#searchdetails').html(data);
+                    $('#data_Modal').modal("show");
+                }
+            });
+
+        });
+    });
+
+    // $('#submit').click(function() {
+    //     alert('submitting');
+    //     $('#formfield').modal("show");
+    // });
     </script>
 
     <script>
+    <?php include 'Script/script.js'; ?>
     </script>
 
     <script src="https://kit.fontawesome.com/6a478048bc.js" crossorigin="anonymous"></script>

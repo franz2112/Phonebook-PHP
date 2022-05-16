@@ -22,6 +22,10 @@ h1 {
     text-align: center;
 }
 
+.text-bold {
+    font-weight: 800;
+}
+
 .sidebar {
     position: fixed;
     left: 0;
@@ -1049,6 +1053,55 @@ form.SDbutton::after {
     clear: both;
     display: table;
 }
+
+
+/* find */
+
+.findbutton input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid White;
+    float: right;
+    width: 330px;
+    background: #f1f1f1;
+    margin-bottom: 20px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.findbutton button {
+    float: right;
+    width: 70px;
+    padding: 10px;
+    background: #2e2e2e;
+    color: white;
+    font-size: 17px;
+    border: 1px solid White;
+    border-left: none;
+    cursor: pointer;
+}
+
+.findbutton button:hover {
+    background: rgb(255, 255, 255);
+    color: #000;
+}
+
+.findbutton ::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.find-details {
+    font-size: 14pt;
+    background: rgba(37, 36, 36, 1);
+    padding: 20px;
+    width: 400px;
+    margin-bottom: 10px;
+}
+
+
+/* find */
 
 .tabledelete {
     color: #fff;
