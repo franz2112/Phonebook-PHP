@@ -113,13 +113,71 @@ error_reporting(0);
     <section class="home-section">
         <div class="main-text">
             <div class="container-xxl">
-
                 <div class="table-responsive data-design ">
+                    <form>
+<!-- Student Data -->
+                <div class="table-responsive data-design">
+                    <div class="hide">
+                    <table class="table table text-white">
+                        <!-- <h1>Student Data</h1> -->
+                        <thead>
+                            <tr>
+                                <th scope="col">Student Number</th>
+                                <th scope="col">Surname</th>
+                                <th scope="col">Firstname</th>
+                                <th scope="col">Occupation </th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Country Code </th>
+                                <th scope="col">Area Code</th>
+                                <th scope="col">Mobile number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--PHP Display Table-->
+                            <?php
+                                $select_query="Select * from store";
+                                $result=mysqli_query($con,$select_query);
+                                $i=1;
+                                if($result){
+                                    while ($row=mysqli_fetch_assoc($result)) {
+                                        $idnumber=$row['idnumber'];
+                                        $surname=$row['surname'];
+                                        $firstname=$row['firstname'];
+                                        $occupation=$row['occupation'];
+                                        $gender=$row['gender'];
+                                        $countrycode=$row['countrycode'];
+                                        $areacode=$row['areacode'];
+                                        $mobilenumber=$row['mobilenumber'];
+                                        echo " <tr> 
+                                            <th>$idnumber</th>
+                                            <td>$surname</td>
+                                            <td>$firstname</td>
+                                            <td>$occupation</td>
+                                            <td>$gender</td>
+                                            <td>$countrycode</td>
+                                            <td>$areacode</td>
+                                            <td>$mobilenumber</td>
+                                            <td class='text-center'>
+                                        </td>
+                                        </tr>";
+                                        $i++;
+                                    }
+                                }
+                                else{
+                                    die(mysqli_error($con));
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+            <br> <br>
+                <!--End Student Data -->
                     <div class="">
                         <form method="post">
                             <div class="findbutton">
                                 <button type="submit" name="submit">Find</button>
-                                <input type="text" name="idnumber" value="<?php echo $idnumber; ?>"
+                                <input type="text" name="idnumber" "
                                     placeholder="Enter Student Number" required="required">
                             </div>
                             <?php 
@@ -138,18 +196,31 @@ error_reporting(0);
 
                                 if($row){
                             ?>
+
+
+
                             <div class="find-details">
                                 <div class="">
                                     <div class="col-lg-12">
-                                        <label class=""> Here is the existing information about
-                                            <span class="text-bold"><?php echo $idnumber; ?></span>:
+                                        <label class=""> Here is the existing information about student
+                                            <span> <?php echo "(";?> </span>
+                                            <span class="text-bold"><?php echo $idnumber; ?></span>
+                                            <span> <?php echo ")";?> </span>
+                                            <hr>
                                         </label>
                                     </div>
                                 </div>
                                 <div class="">
                                     <div class="col-lg-12">
                                         <label class="">
-                                            <?php echo $firstname," ", $surname, " is a ",$occupation, ". His number is ", $mobilenumber;?>
+                                            <span class="text-bold"><?php echo $firstname;?> </span>
+                                            <span> <?php echo " ";?> </span>
+                                            <span class="text-bold"><?php echo $surname;?> </span>
+                                            <span> <?php echo " is a(n) ";?> </span>
+                                            <span class="text-bold"><?php echo $occupation;?> </span>
+                                            <span> <?php echo ". His Mobile Number is ";?> </span>
+                                            <span class="text-bold"><?php echo $mobilenumber;?> </span>
+                                            <span> <?php echo ".";?> </span>
                                         </label>
                                     </div>
                                 </div>

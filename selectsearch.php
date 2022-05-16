@@ -70,10 +70,10 @@ $result=mysqli_query($con,$select_query);
 
 <body style="background-color: #ffe2c9;">
 
-
-    <!--<video autoplay muted loop class="myVideo">
+    <!--VIDEO BG-->
+    <video autoplay muted loop class="myVideo">
         <source src="bg1.mp4" type="video/mp4">
-    </video>-->
+    </video>
     <!--End of Video BG-->
     <div class="container">
         <div class="sidebar">

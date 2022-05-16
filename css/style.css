@@ -1185,3 +1185,20 @@ form.SDbutton::after {
         display: none;
     }
 }
+
+.hide {
+  background-color: #000;
+  width: 1095px;
+  height: 300px;
+  border: 1px dotted black;
+  overflow-y: scroll; 
+}
+
+.hide::-webkit-scrollbar {
+    display: none;
+}
+
+.hide {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
