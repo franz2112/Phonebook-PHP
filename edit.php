@@ -107,7 +107,7 @@ error_reporting(0);
         <div class="main-text">
             <div class="container-xxl">
                 <div class="table-responsive data-design ">
-                    <form>
+                    <form >
                         <!-- Student Data -->
                         <div class="table-responsive data-design">
                             <div class="hide">
@@ -189,8 +189,7 @@ error_reporting(0);
 
                                 if($row){
                             ?>
-                            <div class="find-details">
-                                <div class="">
+                            <div class="find-details1">
                                     <div class="col-lg-12">
                                         <label class=""> Here is the existing information about student
                                             <span> <?php echo "(";?> </span>
@@ -199,7 +198,6 @@ error_reporting(0);
                                             <hr>
                                         </label>
                                     </div>
-                                </div>
                                 <div class="">
                                     <div class="col-lg-12">
                                         <label class="">
@@ -268,7 +266,7 @@ error_reporting(0);
                                                         <td>'.$mobile.'</td>
                                                     <td>
                                                     <button><a href="edit-phonebook.php? updateid='.$id.'" 
-                                                    class="btn btn-primary">Update</a></button>
+                                                    class="btn-primary button3 ice">Update</a></button>
                                                     </td>
                                                     </tr>';
                                                 }
@@ -277,8 +275,21 @@ error_reporting(0);
                                             //header('location:form3-1.php');
                                             }
                                             else{
-                                                $output .='<div class="find-details"> '.$idnumber.'  ID number does not exist</div>';
-                                                echo $output;
+                                                ?>
+
+                                                <div class="find-details1">
+                                                        <div class="col-lg-12">
+                                                            <label class=""> ID Number 
+                                                                <span> <?php echo "(";?> </span>
+                                                                <span class="text-bold"><?php echo $idnumber; ?></span>
+                                                                <span> <?php echo ")";?> </span>
+                                                                <span> <?php echo "Does not Exist";?> </span>
+                                                                <hr>
+                                                            </label>
+                                                        </div>
+                                                </div>
+                                                                   
+                                        <?php
                                         }
 
                                         }

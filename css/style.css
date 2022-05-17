@@ -1162,6 +1162,13 @@ form.SDbutton::after {
     width: 100%;
     margin-bottom: 10px;
 }
+.find-details1 {
+    font-size: 14pt;
+    background: rgba(37, 36, 36, 1);
+    padding: 20px;
+    width: 60%;
+    margin-bottom: 10px;
+}
 
 
 /* find */
