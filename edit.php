@@ -63,13 +63,6 @@ error_reporting(0);
                       <span class="tooltip">Search</span>
                   </li> -->
                 <li>
-                    <a href="index.php" active>
-                        <i class="fa-solid fa-home"></i>
-                        <span class="links_name">Home</span>
-                    </a>
-                    <span class="tooltip">Home</span>
-                </li>
-                <li>
                     <a href="store.php">
                         <i class="fa-solid fa-box-archive"></i>
                         <span class="links_name">Store</span>
@@ -98,7 +91,7 @@ error_reporting(0);
                     <span class="tooltip">View/Search</span>
                 </li>
                 <li>
-                    <a href="exit.php">
+                    <a href="index.php">
                         <i class="fa-solid fa-door-open"></i>
                         <span class="links_name">Exit</span>
                     </a>
@@ -115,27 +108,27 @@ error_reporting(0);
             <div class="container-xxl">
                 <div class="table-responsive data-design ">
                     <form>
-<!-- Student Data -->
-                <div class="table-responsive data-design">
-                    <div class="hide">
-                    <table class="table table text-white">
-                        <!-- <h1>Student Data</h1> -->
-                        <thead>
-                            <tr>
-                                <th scope="col">Student Number</th>
-                                <th scope="col">Surname</th>
-                                <th scope="col">Firstname</th>
-                                <th scope="col">Occupation </th>
-                                <th scope="col">Gender</th>
-                                <th scope="col">Country Code </th>
-                                <th scope="col">Area Code</th>
-                                <th scope="col">Mobile number</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!--PHP Display Table-->
-                            <?php
-                                $select_query="Select * from store";
+                        <!-- Student Data -->
+                        <div class="table-responsive data-design">
+                            <div class="hide">
+                                <table class="table table text-white">
+                                    <!-- <h1>Student Data</h1> -->
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Student Number</th>
+                                            <th scope="col">Surname</th>
+                                            <th scope="col">Firstname</th>
+                                            <th scope="col">Occupation </th>
+                                            <th scope="col">Gender</th>
+                                            <th scope="col">Country Code </th>
+                                            <th scope="col">Area Code</th>
+                                            <th scope="col">Mobile number</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!--PHP Display Table-->
+                                        <?php
+                                $select_query="Select * from store ORDER BY id desc";
                                 $result=mysqli_query($con,$select_query);
                                 $i=1;
                                 if($result){
@@ -167,18 +160,18 @@ error_reporting(0);
                                     die(mysqli_error($con));
                                 }
                             ?>
-                        </tbody>
-                    </table>
-                </div>
-            </form>
-            <br> <br>
-                <!--End Student Data -->
+                                    </tbody>
+                                </table>
+                            </div>
+                    </form>
+                    <br> <br>
+                    <!--End Student Data -->
                     <div class="">
                         <form method="post">
                             <div class="findbutton">
                                 <button type="submit" name="submit">Find</button>
-                                <input type="text" name="idnumber" "
-                                    placeholder="Enter Student Number" required="required">
+                                <input type="text" name="idnumber" placeholder="Enter Student Number"
+                                    required="required">
                             </div>
                             <?php 
                                 if(isset($_POST['submit'])){
@@ -196,9 +189,6 @@ error_reporting(0);
 
                                 if($row){
                             ?>
-
-
-
                             <div class="find-details">
                                 <div class="">
                                     <div class="col-lg-12">
@@ -249,7 +239,7 @@ error_reporting(0);
                                         <?php 
                                     
                                             //php code to display the data
-                                            $sql0="Select * from `store` WHERE idnumber = $idnumber";
+                                            $sql0="Select * from `store` WHERE idnumber = $idnumber ";
                                             $result0 = mysqli_query($con,$sql0);
 
                                             if($result0){

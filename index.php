@@ -61,71 +61,13 @@
         <source src="bg1.mp4" type="video/mp4">
     </video>
     <!--End of Video BG-->
-    <div class="container">
-        <div class="sidebar">
-            <div class="logo-details">
-                <i class="fa-solid fa-0 icon"></i>
-                <div class="logo_name">PHONEBOOK</div>
-                <i class='bx bx-menu' id="btn"></i>
-            </div>
-            <ul class="nav-list-1">
-                <!-- <li>
-                      <i class='bx bx-search' ></i>
-                      <input type="text" placeholder="Search...">
-                      <span class="tooltip">Search</span>
-                  </li> -->
-                <li>
-                    <a href="index.php" active>
-                        <i class="fa-solid fa-home"></i>
-                        <span class="links_name">Home</span>
-                    </a>
-                    <span class="tooltip">Home</span>
-                </li>
-                <li>
-                    <a href="store.php">
-                        <i class="fa-solid fa-box-archive"></i>
-                        <span class="links_name">Store</span>
-                    </a>
-                    <span class="tooltip">Store</span>
-                </li>
-                <li>
-                    <a href="edit.php">
-                        <i class="fa-solid fa-pen"></i>
-                        <span class="links_name">Edit</span>
-                    </a>
-                    <span class="tooltip">Edit</span>
-                </li>
-                <li>
-                    <a href="delete.php">
-                        <i class="fa-solid fa-trash-can"></i>
-                        <span class="links_name">Delete</span>
-                    </a>
-                    <span class="tooltip">Delete</span>
-                </li>
-                <li>
-                    <a href="selectsearch.php">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <span class="links_name">View/Search</span>
-                    </a>
-                    <span class="tooltip">View/Search</span>
-                </li>
-                <li>
-                    <a href="exit.php">
-                        <i class="fa-solid fa-door-open"></i>
-                        <span class="links_name">Exit</span>
-                    </a>
-                    <span class="tooltip">Exit</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <section class="home-section">
+    <section class="welcome-section">
         <!-- main page -->
         <div class="main-text">
             <!-- <img src="https://html.sammy-codes.com/images/small-profile.jpeg" class="main-page"> -->
             <div class="container-xxl">
                 <div class="menu-details">
-                    <h1>THE ASEAN STUDENT PHONEBOOK</h1>
+                    <h1>WELCOME TO THE ASEAN STUDENT PHONEBOOK</h1>
                     <p>Southeast Asia has 11 countries. If you have a classmate or schoolmate from this area, and you
                         want to contact him, you can make an international call. Typically, to make that call, the
                         country
@@ -192,16 +134,6 @@
             </div>
         </div>
 
-        <div class="container-xxl">
-            <div class="honeycomb d-flex justify-content-center">
-                <ol class="odd">
-                    <li class='hex'></li>
-                    <li class='hex'></li>
-                    <li class='hex'></li>
-                    <li class='hex'></li>
-                </ol>
-            </div>
-        </div>
         <!-- Footer -->
         <footer class="text-center text-lg-start text-white">
             <!-- Grid container -->

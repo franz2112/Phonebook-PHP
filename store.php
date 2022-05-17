@@ -98,13 +98,6 @@
                       <span class="tooltip">Search</span>
                   </li> -->
                 <li>
-                    <a href="index.php" active>
-                        <i class="fa-solid fa-home"></i>
-                        <span class="links_name">Home</span>
-                    </a>
-                    <span class="tooltip">Home</span>
-                </li>
-                <li>
                     <a href="store.php">
                         <i class="fa-solid fa-box-archive"></i>
                         <span class="links_name">Store</span>
@@ -133,7 +126,7 @@
                     <span class="tooltip">View/Search</span>
                 </li>
                 <li>
-                    <a href="exit.php">
+                    <a href="index.php">
                         <i class="fa-solid fa-door-open"></i>
                         <span class="links_name">Exit</span>
                     </a>
@@ -151,6 +144,7 @@
             <div class="container-xxl">
                 <div class="main-menu-bg">
                     <div class="form-contain">
+                        <h1>ADD STUDENT</h1>
                         <div class="map js-tilt-reverse" data-tilt>
                             <img src="img/map5.png" alt="img">
                         </div>
@@ -161,55 +155,61 @@
                             <input type="varchar" required="required" class="text-area"
                                 placeholder="Enter Student Number" name="idnumber">
                         </div>
-                        <br>
+
                         <div class="form-group">
-                            <label> Surname </label> <label class="indent3">Firstname</label> <br>
+                            <label> Surname </label><br>
                             <input type="varchar" required="required" class="text-area1" placeholder="Enter Surname"
                                 name="surname">
+                        </div>
+                        <div class="form-group">
+                            <label>Firstname</label><br>
                             <input type="varchar" required="required" class="text-area1" placeholder="Enter First Name"
                                 name="firstname">
                         </div>
-                        <br>
                         <div class="form-group">
-                            <label> Occupation </label> <label class="indent2">Gender</label> <br>
-                            <input type="varchar" required="required" class="text-area2" placeholder="Enter Occupation"
+                            <label> Occupation </label><br>
+                            <input type="varchar" required="required" class="text-area1" placeholder="Enter Occupation"
                                 name="occupation">
+                        </div>
+                        <div class="form-group">
+                            <label>Gender</label><br>
                             <input type="radio" id="html" name="gender" value="male">
                             <label for="html">Male</label> &nbsp
                             <input type="radio" id="css" name="gender" value="female">
                             <label for="css">Female</label>
-                            <br>
-                            <br>
-                            <div class="form-group">
-                                <label> Country Code</label> <label class="indent">Area Code </label> <br>
-                                <select type="dropdown" required="required" class="text-area3" name="countrycode">
-                                    <option selected>-Select Country Code-</option>
-                                    <option value="60">Malaysia - 60</option>
-                                    <option value="62">Indonesia - 62</option>
-                                    <option value="63">Philippines - 63</option>
-                                    <option value="65">Singapore - 65</option>
-                                    <option value="66">Thailand - 66</option>
-                                    <option value="84">Vietnam - 84</option>
-                                    <option value="673">Brunei Darussalam - 673</option>
-                                    <option value="855">Cambodia - 855</option>
-                                    <option value="856">Lao - 856</option>
-                                    <option value="95">Myanmar - 95</option>
-                                    <option value="670">Timor Leste - 670</option>
-                                </select>
-                                <input type="int" required="required" class="text-area3" placeholder="Enter Area Code"
-                                    name="areacode">
-                            </div>
-                            <br>
-                            <div class="form-group">
-                                <label> Mobile number </label>
-                                <input type="int" required="required" class="text-area"
-                                    placeholder="Enter Mobile Number" name="mobilenumber">
-                            </div>
-                            <br>
-                            <div class="search-menu-submit">
-                                <!-- <a href="searchcountry.php" class="button ice" role="button">Search</a> -->
-                                <button name="submit" type="submit" class="button ice" role="button">Submit</button>
-                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label> Country Code</label><br>
+                            <select type="dropdown" required="required" class="text-area1" name="countrycode">
+                                <option selected>-Select Country Code-</option>
+                                <option value="60">Malaysia - 60</option>
+                                <option value="62">Indonesia - 62</option>
+                                <option value="63">Philippines - 63</option>
+                                <option value="65">Singapore - 65</option>
+                                <option value="66">Thailand - 66</option>
+                                <option value="84">Vietnam - 84</option>
+                                <option value="673">Brunei Darussalam - 673</option>
+                                <option value="855">Cambodia - 855</option>
+                                <option value="856">Lao - 856</option>
+                                <option value="95">Myanmar - 95</option>
+                                <option value="670">Timor Leste - 670</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Area Code </label> <br>
+                            <input type="int" required="required" class="text-area1" placeholder="Enter Area Code"
+                                name="areacode">
+                        </div>
+                        <div class="form-group">
+                            <label> Mobile number </label>
+                            <input type="int" required="required" class="text-area" placeholder="Enter Mobile Number"
+                                name="mobilenumber">
+                        </div>
+                        <br>
+                        <div class="search-menu-submit">
+                            <!-- <a href="searchcountry.php" class="button ice" role="button">Search</a> -->
+                            <button name="submit" type="submit" class="button ice" role="button">Submit</button>
+                        </div>
                     </form>
                 </div>
             </div>

@@ -105,13 +105,7 @@
                       <input type="text" placeholder="Search...">
                       <span class="tooltip">Search</span>
                   </li> -->
-                <li>
-                    <a href="index.php" active>
-                        <i class="fa-solid fa-home"></i>
-                        <span class="links_name">Home</span>
-                    </a>
-                    <span class="tooltip">Home</span>
-                </li>
+
                 <li>
                     <a href="store.php">
                         <i class="fa-solid fa-box-archive"></i>

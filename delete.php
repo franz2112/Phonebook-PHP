@@ -82,13 +82,6 @@
                       <span class="tooltip">Search</span>
                   </li> -->
                 <li>
-                    <a href="index.php" active>
-                        <i class="fa-solid fa-home"></i>
-                        <span class="links_name">Home</span>
-                    </a>
-                    <span class="tooltip">Home</span>
-                </li>
-                <li>
                     <a href="store.php">
                         <i class="fa-solid fa-box-archive"></i>
                         <span class="links_name">Store</span>
@@ -117,7 +110,7 @@
                     <span class="tooltip">View/Search</span>
                 </li>
                 <li>
-                    <a href="exit.php">
+                    <a href="index.php">
                         <i class="fa-solid fa-door-open"></i>
                         <span class="links_name">Exit</span>
                     </a>
@@ -138,7 +131,7 @@
                             <button name="submit" type="submit"><i class="fa fa-search"></i></button>
                             <input value="<?php echo $idnumber ?>" type="text" placeholder="Search Id Number "
                                 name="idnumber">
-                        
+
                     </div>
                     <!--End Search Box-->
 
@@ -187,7 +180,7 @@
                                         <td>'.$areacode.'</td>
                                         <td>'.$mobilenumber.'</td>
                                         <td>
-                                        <button class="btn btn-danger"><a href="deletefunction.php?deleteid='.$id.'" class="text-light text-decoration-none"> Delete </a> </button>
+                                        <button class=""><a href="deletefunction.php?deleteid='.$id.'" class="button3 ice2 btn-danger"> Delete </a> </button>
                                         </td>
                                     </tr>
                                     ';

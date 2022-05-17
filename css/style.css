@@ -94,14 +94,14 @@ h1 {
 }
 
 .sidebar .nav-list-1 {
-    margin-top: 10px;
+    margin-top: 50px;
     padding-left: 0;
     height: 100%;
 }
 
 .sidebar li {
     position: relative;
-    margin: 40px 0;
+    margin: 60px 0;
     list-style: none;
 }
 
@@ -286,6 +286,15 @@ h1 {
     z-index: 2;
 }
 
+.welcome-section {
+    position: relative;
+    min-height: 100vh;
+    top: 0;
+    width: 100%;
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+
 .sidebar.open~.home-section {
     left: 250px;
     width: calc(100% - 250px);
@@ -375,6 +384,10 @@ h1 {
     margin: 30px;
 }
 
+.main-menu-bg h1 {
+    font-size: 45pt;
+}
+
 .text-area {
     width: 100%;
     /* background: rgba(255, 255, 255, 0); */
@@ -385,7 +398,8 @@ h1 {
 }
 
 .text-area1 {
-    width: 49.5%;
+    width: 49%;
+    float: left;
     font-size: 16px;
     color: #000;
     padding: 10px;
@@ -409,15 +423,15 @@ h1 {
 }
 
 .indent {
-    padding-left: 140px;
+    padding-left: 185px;
 }
 
 .indent2 {
-    padding-left: 155px;
+    padding-left: 195px;
 }
 
 .indent3 {
-    padding-left: 175px;
+    padding-left: 220px;
 }
 
 .btnsubmit {
@@ -436,7 +450,7 @@ h1 {
 .map img {
     width: 100%;
     padding: 10px;
-    padding-top: 100px;
+    padding-top: 50px;
     /* transform: rotate(20deg); */
 }
 
@@ -701,6 +715,44 @@ ol.odd {
 
 /* seach menu buttons*/
 
+.button3 {
+    border: 1px solid green;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    transform: skewX(-10deg);
+    height: 50px;
+    width: 130px;
+    border-radius: 20px 5px 20px 0px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font: 15px sans-serif;
+    font-weight: 300;
+    text-shadow: 0 0 20px #fff;
+    text-transform: uppercase;
+    -webkit-animation: breath2 2s 0.5s infinite alternate;
+    animation: breath2 2s 0.5s infinite alternate;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.button3:before {
+    content: "";
+    display: block;
+    width: calc(100% - 22px);
+    height: calc(50px - 8px);
+    -webkit-animation: breath 2s infinite alternate;
+    animation: breath 2s infinite alternate;
+    left: 10px;
+    top: 3px;
+    position: absolute;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 15px 3px 15px 3px;
+}
+
 .button {
     border: 1px solid green;
     -webkit-backdrop-filter: blur(10px);
@@ -922,9 +974,10 @@ ol.odd {
 
 .search-bg-meaning {
     font-size: 12pt;
-    width: 100%;
-    padding-left: 100px;
-    padding-right: 100px;
+    width: 50%;
+    float: right;
+    padding-left: 30px;
+    padding-right: 30px;
     margin-top: 25px;
     border-radius: 20px;
 }
@@ -967,6 +1020,16 @@ input[type=checkbox] {
 }
 
 .search input:focus {
+    box-shadow: none;
+    border: 2px solid rgb(56, 56, 56);
+}
+
+.search select {
+    height: 50px;
+    border: 2px solid #d6d4d4;
+}
+
+.search select:focus {
     box-shadow: none;
     border: 2px solid rgb(56, 56, 56);
 }
@@ -1096,7 +1159,7 @@ form.SDbutton::after {
     font-size: 14pt;
     background: rgba(37, 36, 36, 1);
     padding: 20px;
-    width: 400px;
+    width: 100%;
     margin-bottom: 10px;
 }
 
@@ -1187,11 +1250,11 @@ form.SDbutton::after {
 }
 
 .hide {
-  background-color: #000;
-  width: 1095px;
-  height: 300px;
-  border: 1px dotted black;
-  overflow-y: scroll; 
+    background-color: #000;
+    width: 1095px;
+    height: 300px;
+    border: 1px dotted black;
+    overflow-y: scroll;
 }
 
 .hide::-webkit-scrollbar {
@@ -1199,6 +1262,6 @@ form.SDbutton::after {
 }
 
 .hide {
-  -ms-overflow-style: none; 
-  scrollbar-width: none; 
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
