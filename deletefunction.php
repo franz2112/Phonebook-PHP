@@ -1,11 +1,11 @@
 <?php
 
 include('Connect.php');
-if(isset($_POST['deleteid']))
+if(isset($_GET['deleteid']))
 {
-	$id=$_POST['idnumber'];
+	$id=$_GET['deleteid'];
 	//echo $id;
-	$sql_delete="Delete from `store` where idnumber=$id";
+	$sql_delete="Delete from `store` where id=$id";
 	$result5=mysqli_query($con,$sql_delete);
 	if($result5)
 	{

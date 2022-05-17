@@ -5,10 +5,10 @@
     $choice = '';
     
     include 'deletefunction.php';
-    if(isset($_POST['submit']))
+    if(isset($_GET['submit']))
     {
-      $idnumber = $_POST['idnumber'];
-      $choice = $_POST['choice'];
+      $idnumber = $_GET['idnumber'];
+      $choice = $_GET['choice'];
       $sql1="select * from `store` where idnumber = $idnumber";
       $result = mysqli_query($con, $sql1);
       $row=mysqli_fetch_assoc($result);
@@ -134,11 +134,11 @@
                 <div class="table-responsive data-design ">
                     <!--Search Box With Button-->
                     <div class="SDbutton">
-                        <form class="SDbutton" method="post">
+                        <form class="SDbutton" method="get">
                             <button name="submit" type="submit"><i class="fa fa-search"></i></button>
                             <input value="<?php echo $idnumber ?>" type="text" placeholder="Search Id Number "
                                 name="idnumber">
-                        </form>
+                        
                     </div>
                     <!--End Search Box-->
 
@@ -158,17 +158,16 @@
                         </thead>
                         <tbody>
                             <?php
-                                if(isset($_POST['submit'])){
+                                if(isset($_GET['submit'])){
                                 if($row){
 
                                 $sql1="Select * from  `store` where idnumber = $idnumber";
                                 $selectresult=mysqli_query($con, $sql1);
                                 $i=1;
-                                if(isset($_POST['Delete'])){
-                                    header('location:deletefunction.php');
-                                }
+
                                 if($selectresult){
                                     while($row1=mysqli_fetch_assoc($selectresult)){
+                                    $id=$row1['id'];
                                     $idnumber1=$row1['idnumber'];
                                     $surname=$row1['surname'];
                                     $firstname=$row1['firstname'];
@@ -188,9 +187,7 @@
                                         <td>'.$areacode.'</td>
                                         <td>'.$mobilenumber.'</td>
                                         <td>
-                                        <form name="f2" action="javascript:select();" method="POST">
-                                            <button class="btn btn-danger" type="submit" name="deleteid" value="Delete" >Delete</button>
-                                        </form>
+                                        <button class="btn btn-danger"><a href="deletefunction.php?deleteid='.$id.'" class="text-light text-decoration-none"> Delete </a> </button>
                                         </td>
                                     </tr>
                                     ';
@@ -276,6 +273,8 @@
         scale: 1.1
     })
     </script>
+    </form>
 </body>
+
 
 </html>
