@@ -64,9 +64,9 @@
 
 <body>
     <!--VIDEO BG-->
-        <video autoplay muted loop class="myVideo">
-            <source src="bg1.mp4" type="video/mp4">
-        </video>
+    <video autoplay muted loop class="myVideo">
+        <source src="bg1.mp4" type="video/mp4">
+    </video>
     <!--End of Video BG-->
     <div class="container">
         <div class="sidebar">

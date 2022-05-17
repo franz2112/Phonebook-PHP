@@ -4,22 +4,27 @@ include 'Connect.php';
 $select_query = "select * from store";
 $result=mysqli_query($con,$select_query);
 
-// if (isset($_POST["surnamesubmit"])) {
-//         $surname = $_POST['surnamesearch'];
-//         $select_query = "select * from store where surname='$surname'";
-//         $result=mysqli_query($con,$select_query);
+if (isset($_POST["surnamesubmit"])) {
+        $surname = $_POST['surnamesearch'];
+        $select_query = "select * from store where surname='$surname'";
+        $result=mysqli_query($con,$select_query);
 
-//         if(mysqli_num_rows($result)>0){
-//             // echo "<script>window.open('selectsearch.php', '_self')</script>";
-//             echo'';
-//         }
-//         else{
-//             echo"<script>
-//                     alert('Surname not exist!')
-//                     window.open('selectsearch.php', '_self')
-//                 </script>";
-//         }
-//     }
+        if(mysqli_num_rows($result)>0){
+            while ($row=mysqli_fetch_assoc($result)){
+
+                echo"<script>
+                    alert('Surname exist!')
+                    window.open('selectsearch.php', '_self')
+                </script>";
+            }
+        }
+        else{
+            echo"<script>
+                    alert('Surname not exist!')
+                    window.open('selectsearch.php', '_self')
+                </script>";
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -142,16 +147,12 @@ $result=mysqli_query($con,$select_query);
                     <h3>Whom are you looking for?</h3>
                     <form action="" method="POST">
                         <div class="search">
-                            <?php
-                            if($row = mysqli_fetch_array($result))
-                            {
-                            ?>
                             <input type="text" class="form-control" placeholder="Enter Surname" name="surnamesearch"
                                 id="surnamesearching">
-                            <div class="search-menu-2">
+                            <div class=" search-menu-2">
                                 <div class="field">
-                                    <button type="button" class='button2 ice2 view_data' data-bs-toggle="modal"
-                                        data-bs-target="#data_Modal" id="<?php echo $row['surname']; ?>">Search</button>
+                                    <button type="submit" class='button2 ice2 view_data' data-bs-toggle="modal"
+                                        data-bs-target="#data_Modal" name="surnamesubmit">Search</button>
                                     <!-- <a href="searchsurname.php?surnamesubmit='.$surname.'" class='button ice'
                                     name="surnamesubmit" type="submit" role="button">Search</a> -->
                                     <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -160,9 +161,6 @@ $result=mysqli_query($con,$select_query);
                                     </button> -->
                                 </div>
                             </div>
-                            <?php
-                            }
-                            ?>
                         </div>
                     </form>
                 </div>
@@ -366,31 +364,7 @@ $result=mysqli_query($con,$select_query);
         </div>
     </div>
 
-    <script>
-    $(document).ready(function() {
-        $(document).on('click', '.view_data', function() {
-            var employee_id = $(this).attr('surname');
 
-            $.ajax({
-                type: "POST",
-                url: "selectsurname.php",
-                data: {
-                    employee_id: employee_id
-                },
-                success: function(data) {
-                    $('#searchdetails').html(data);
-                    $('#data_Modal').modal("show");
-                }
-            });
-
-        });
-    });
-
-    // $('#submit').click(function() {
-    //     alert('submitting');
-    //     $('#formfield').modal("show");
-    // });
-    </script>
 
     <script>
     <?php include 'Script/script.js'; ?>
