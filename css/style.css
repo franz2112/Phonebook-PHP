@@ -349,7 +349,8 @@ h1 {
 }
 
 .menu-details h1 {
-    padding-top: 120px;
+    padding-top: 80px;
+    font-size: 45pt;
 }
 
 .store-input {
@@ -588,60 +589,13 @@ a:hover {
     opacity: 0.7;
 }
 
+.main-menu-buttons {
+    display: inline-block;
+    margin-right: 2rem;
+}
+
 
 /*End CSS for profile.php*/
-
-ol.even {
-    position: relative;
-    left: 5.45455rem;
-}
-
-ol.odd {
-    position: relative;
-}
-
-.hex {
-    position: relative;
-    margin: 1em auto;
-    width: 6rem;
-    height: 10.2rem;
-    background: #353535;
-    transform: rotate(-90deg);
-    display: inline-block;
-    list-style-type: none;
-    margin-right: 4.1538rem;
-    transition: all 150ms ease-in-out;
-    z-index: 2;
-}
-
-.hex:before,
-.hex:after {
-    position: absolute;
-    width: inherit;
-    height: inherit;
-    border-radius: inherit;
-    background: inherit;
-    content: '';
-    z-index: -1;
-}
-
-.hex:before {
-    transform: rotate(60deg);
-}
-
-.hex:after {
-    transform: rotate(-60deg);
-}
-
-.hex:hover {
-    background: #ffffff;
-    cursor: pointer;
-}
-
-.honeycomb {
-    padding-top: 20px;
-    width: 100%;
-}
 
 
 /*button style in search*/
@@ -710,6 +664,10 @@ ol.odd {
 
 .search-menu-submit {
     width: 100%;
+}
+
+.search-menu-submit a {
+    text-decoration: none;
 }
 
 
@@ -1162,6 +1120,7 @@ form.SDbutton::after {
     width: 100%;
     margin-bottom: 10px;
 }
+
 .find-details1 {
     font-size: 14pt;
     background: rgba(37, 36, 36, 1);

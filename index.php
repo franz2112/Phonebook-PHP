@@ -130,7 +130,32 @@
                         </tbody>
                     </table>
                 </div>
-
+                <div class="text-center">
+                    <div class="main-menu-buttons">
+                        <div class="search-menu-submit">
+                            <a href="store.php" class="button ice btn-success" role="button">Store</a>
+                            <!-- <button name="submit" type="submit" class="button ice" role="button">Submit</button> -->
+                        </div>
+                    </div>
+                    <div class="main-menu-buttons">
+                        <div class="search-menu-submit">
+                            <a href="edit.php" class="button ice btn-info" role="button">Edit</a>
+                            <!-- <button name="submit" type="submit" class="button ice" role="button">Submit</button> -->
+                        </div>
+                    </div>
+                    <div class="main-menu-buttons">
+                        <div class="search-menu-submit">
+                            <a href="delete.php" class="button ice btn-danger" role="button">Delete</a>
+                            <!-- <button name="submit" type="submit" class="button ice" role="button">Submit</button> -->
+                        </div>
+                    </div>
+                    <div class="main-menu-buttons">
+                        <div class="search-menu-submit">
+                            <a href="selectsearch.php" class="button ice btn-warning" role="button">View/Search</a>
+                            <!-- <button name="submit" type="submit" class="button ice" role="button">Submit</button> -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
