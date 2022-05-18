@@ -125,7 +125,7 @@
                     <form method="post">
                         <div class="SDbutton">
                             <button name="submit" type="submit"><i class="fa fa-search"></i></button>
-                            <input value="" type="text" placeholder="Search Id Number " name="idnumber">
+                            <input value="" type="text" placeholder="Enter Student Number to Delete" name="idnumber">
                             <!--End Search Box-->
                         </div>
                         <table class="table table text-white text-center">
@@ -171,7 +171,8 @@
                                             <td class="align-middle">'.$areacode.'</td>
                                             <td class="align-middle">'.$mobilenumber.'</td>
                                             <td class="align-middle">
-                                            <button"><a href="deletefunction.php?deleteid='.$id.'" class="button3 ice2 btn-danger"> Delete </a> </button>
+                                            <button><a onclick="checker()"
+                                            href="deletefunction.php?deleteid='.$id.'" class="button3 ice2 btn-danger"> Delete </a> </button>
                                             </td>
                                         </tr>
                                         ';
@@ -267,15 +268,27 @@
             </div>
         </footer>
     </section>
-    <?php?><script>
+    <script>
+    function checker() {
+        var check = confirm('Are you sure You Want to Delete Data?');
+
+        if (check == false) {
+            event.preventDefault();
+        }
+    }
+    </script>
+
+    <script>
     <?php include 'Script/script.js'; ?>
     </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
     <script>
     <?php include 'Script/tilt.jquery.min.js'; ?>
     </script>
+
     <script>
     $('.js-tilt').tilt({
         scale: 1.1

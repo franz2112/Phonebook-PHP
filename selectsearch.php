@@ -203,7 +203,7 @@ error_reporting(0);
                 <!-- Search by Country  -->
                 <div class="search-bg-meaning">
                     <h1>Search by Country</h1>
-                    <h3>Whom are you looking for?</h3>
+                    <h3>What country are you looking?</h3>
                     <form action="" method="POST">
                         <div class="search">
                             <select type="dropdown" required="required" class="form-control" name="countrysearch">
@@ -225,8 +225,7 @@ error_reporting(0);
                             <div class=" search-menu-2">
                                 <div class="search-menu">
                                     <div class="field">
-                                        <button type="submit" class='button2 ice2 view_data' data-bs-toggle="modal"
-                                            data-bs-target="#data_Modal" name="countrysubmit">Search</button>
+                                        <button type="submit" class="button2 ice2" name="countrysubmit">Search</button>
                                     </div>
                                 </div>
                                 <div class="field">
@@ -254,9 +253,9 @@ error_reporting(0);
                                     <div class="find-details">
                                         <div class="">
                                             <div class="col-lg-12">
-                                                <label class=""> Here is the existing information about student
+                                                <label> Here are the students from the
                                                     <span> <?php echo "(";?> </span>
-                                                    <span class="text-bold"><?php echo $surname; ?></span>
+                                                    <span class="text-bold"><?php echo $countrycode; ?></span>
                                                     <span> <?php echo ")";?> </span>
                                                     <hr>
                                                 </label>
@@ -403,43 +402,6 @@ error_reporting(0);
             </div>
         </footer>
     </section>
-    <!-- Modal -->
-    <div class="modal fade" id="data_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered ">
-            <div class="modal-content text-dark">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Search Surname</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" id="searchdetails">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btnmodals btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-    $(document).ready(function() {
-        // view details
-        $(document).on('click', '.view_data', function() {
-            //$('#dataModal').modal();
-            var employee_id = $(this).attr("id");
-            $.ajax({
-                url: "select.php",
-                method: "POST",
-                data: {
-                    employee_id: employee_id
-                },
-                success: function(data) {
-                    $('#employee_detail').html(data);
-                    $('#dataModal').modal('show');
-                }
-            });
-        });
-    });
-    </script>
 
     <script>
     <?php include 'Script/script.js'; ?>

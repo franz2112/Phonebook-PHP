@@ -149,38 +149,38 @@
                             <img src="img/map5.png" alt="img">
                         </div>
                     </div>
-                    <form method="post" class="form-details">
-                        <div class="form-group">
-                            <label> Student Number </label>
+                    <form method="post" class="form-details row g-3">
+                        <div class="col-md-12">
+                            <label class="form-label"> Student Number </label>
                             <input type="varchar" required="required" class="text-area"
-                                placeholder="Enter Student Number" name="idnumber">
+                                placeholder="Enter Student Number" name="idnumber" maxlength="8">
                         </div>
-
-                        <div class="form-group">
-                            <label> Surname </label><br>
-                            <input type="varchar" required="required" class="text-area1" placeholder="Enter Surname"
+                        <div class="col-md-6">
+                            <label class="form-label"> Surname </label><br>
+                            <input type="varchar" required="required" class="text-area" placeholder="Enter Surname"
                                 name="surname">
                         </div>
-                        <div class="form-group">
-                            <label>Firstname</label><br>
-                            <input type="varchar" required="required" class="text-area1" placeholder="Enter First Name"
+                        <div class="col-md-6">
+                            <label class="form-label">Firstname</label><br>
+                            <input type="varchar" required="required" class="text-area" placeholder="Enter First Name"
                                 name="firstname">
                         </div>
-                        <div class="form-group">
-                            <label> Occupation </label><br>
-                            <input type="varchar" required="required" class="text-area1" placeholder="Enter Occupation"
+
+                        <div class="col-md-6">
+                            <label class="form-label"> Occupation </label><br>
+                            <input type="varchar" required="required" class="text-area" placeholder="Enter Occupation"
                                 name="occupation">
                         </div>
-                        <div class="form-group">
-                            <label>Gender</label><br>
+                        <div class="col-md-6">
+                            <label class="form-label">Gender</label><br>
                             <input type="radio" id="html" name="gender" value="male">
                             <label for="html">Male</label> &nbsp
                             <input type="radio" id="css" name="gender" value="female">
                             <label for="css">Female</label>
                         </div>
-                        <div class="form-group">
-                            <label> Country Code</label><br>
-                            <select type="dropdown" required="required" class="text-area1" name="countrycode">
+                        <div class="col-md-6">
+                            <label class="form-label"> Country Code</label><br>
+                            <select type="dropdown" required="required" class="text-area" name="countrycode">
                                 <option selected>-Select Country Code-</option>
                                 <option value="60">Malaysia - 60</option>
                                 <option value="62">Indonesia - 62</option>
@@ -195,20 +195,21 @@
                                 <option value="670">Timor Leste - 670</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label>Area Code </label> <br>
-                            <input type="int" required="required" class="text-area1" placeholder="Enter Area Code"
+                        <div class="col-md-6">
+                            <label class="form-label">Area Code </label> <br>
+                            <input type="int" required="required" class="text-area" placeholder="Enter Area Code"
                                 name="areacode">
                         </div>
-                        <div class="form-group">
-                            <label> Mobile number </label>
+                        <div class="col-md-12">
+                            <label class="form-label"> Mobile number </label>
                             <input type="int" required="required" class="text-area" placeholder="Enter Mobile Number"
-                                name="mobilenumber">
+                                name="mobilenumber" maxlength="11">
                         </div>
                         <br>
                         <div class="search-menu-submit">
                             <!-- <a href="searchcountry.php" class="button ice" role="button">Search</a> -->
-                            <button name="submit" type="submit" class="button ice" role="button">Submit</button>
+                            <button name="submit" type="submit" class="button ice btn-success"
+                                role="button">Submit</button>
                         </div>
                     </form>
                 </div>
