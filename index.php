@@ -139,7 +139,7 @@
                     </div>
                     <div class="main-menu-buttons">
                         <div class="search-menu-submit">
-                            <a href="edit.php" class="button ice btn-info" role="button">Edit</a>
+                            <a href="edit.php" class="button ice btn-info text-white" role="button">Edit</a>
                             <!-- <button name="submit" type="submit" class="button ice" role="button">Submit</button> -->
                         </div>
                     </div>
@@ -151,7 +151,8 @@
                     </div>
                     <div class="main-menu-buttons">
                         <div class="search-menu-submit">
-                            <a href="selectsearch.php" class="button ice btn-warning" role="button">View/Search</a>
+                            <a href="selectsearch.php" class="button ice btn-warning text-white"
+                                role="button">View/Search</a>
                             <!-- <button name="submit" type="submit" class="button ice" role="button">Submit</button> -->
                         </div>
                     </div>
@@ -181,7 +182,7 @@
                             <!-- Facebook -->
                             <a href="https://web.facebook.com/nexusapplert"
                                 class="btn btn-outline-light btn-floating m-1 text-white" role="button">
-                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-facebook"></i>
                             </a>
                             <!-- Twitter -->
                             <a class="btn btn-outline-light btn-floating m-1 text-white" role="button">

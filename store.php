@@ -240,7 +240,7 @@
                             <!-- Facebook -->
                             <a href="https://web.facebook.com/nexusapplert"
                                 class="btn btn-outline-light btn-floating m-1 text-white" role="button">
-                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-facebook"></i>
                             </a>
                             <!-- Twitter -->
                             <a class="btn btn-outline-light btn-floating m-1 text-white" role="button">
