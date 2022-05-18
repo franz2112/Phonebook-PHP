@@ -1,18 +1,15 @@
 <?php
-    error_reporting(0);
+
     include 'Connect.php';
-    $idnumber = "";
-    $choice = '';
-    
-    include 'deletefunction.php';
-    if(isset($_GET['submit']))
-    {
-      $idnumber = $_GET['idnumber'];
-      $choice = $_GET['choice'];
-      $sql1="select * from `store` where idnumber = $idnumber";
-      $result = mysqli_query($con, $sql1);
-      $row=mysqli_fetch_assoc($result);
-    }
+
+    // if(isset($_GET['submit']))
+    // {
+    //   $idnumber = $_GET['idnumber'];
+    //   $choice = $_GET['choice'];
+    //   $sql1="select * from `store` where idnumber = '$idnumber'";
+    //   $result = mysqli_query($con, $sql1);
+    //   $row=mysqli_fetch_assoc($result);
+    // }
 ?>
 
 <!DOCTYPE html>
@@ -123,86 +120,105 @@
         <div class="main-text">
             <!--Table-->
             <div class="container-xxl">
-
-                <div class="table-responsive data-design ">
+                <div class="table-responsive delete-data-design ">
                     <!--Search Box With Button-->
-                    <div class="SDbutton">
-                        <form class="SDbutton" method="get">
+                    <form method="post">
+                        <div class="SDbutton">
                             <button name="submit" type="submit"><i class="fa fa-search"></i></button>
-                            <input value="<?php echo $idnumber ?>" type="text" placeholder="Search Id Number "
-                                name="idnumber">
-
-                    </div>
-                    <!--End Search Box-->
-
-                    <table class="table text-white">
-                        <thead>
-                            <tr>
-                                <th scope="col">ID Number</th>
-                                <th scope="col">Surname</th>
-                                <th scope="col">First Name</th>
-                                <th scope="col">Occupation</th>
-                                <th scope="col">Gender</th>
-                                <th scope="col">Country Code</th>
-                                <th scope="col">Area Code</th>
-                                <th scope="col">Mobile Number</th>
-                                <th scope="col">&nbsp;</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                                if(isset($_GET['submit'])){
-                                if($row){
-
-                                $sql1="Select * from  `store` where idnumber = $idnumber";
+                            <input value="" type="text" placeholder="Search Id Number " name="idnumber">
+                            <!--End Search Box-->
+                        </div>
+                        <table class="table table text-white text-center">
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID Number</th>
+                                    <th scope="col">Surname</th>
+                                    <th scope="col">First Name</th>
+                                    <th scope="col">Occupation</th>
+                                    <th scope="col">Gender</th>
+                                    <th scope="col">Country Code</th>
+                                    <th scope="col">Area Code</th>
+                                    <th scope="col">Mobile Number</th>
+                                    <th scope="col">&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                if(isset($_POST['submit'])){
+                                $searchdelete = $_POST['idnumber'];
+                                $sql1="Select * from  `store` where idnumber = '$searchdelete'";
                                 $selectresult=mysqli_query($con, $sql1);
                                 $i=1;
-
-                                if($selectresult){
-                                    while($row1=mysqli_fetch_assoc($selectresult)){
-                                    $id=$row1['id'];
-                                    $idnumber1=$row1['idnumber'];
-                                    $surname=$row1['surname'];
-                                    $firstname=$row1['firstname'];
-                                    $occupation=$row1['occupation'];
-                                    $gender=$row1['gender'];
-                                    $countrycode=$row1['countrycode'];
-                                    $areacode=$row1['areacode'];
-                                    $mobilenumber=$row1['mobilenumber'];
-                                    echo '
-                                    <tr class= "tabledelete">
-                                        <th scope="row">'.$idnumber1.'</th>
-                                        <td>'.$surname.'</td>
-                                        <td>'.$firstname.'</td>
-                                        <td>'.$occupation.'</td>
-                                        <td>'.$gender.'</td>
-                                        <td>'.$countrycode.'</td>
-                                        <td>'.$areacode.'</td>
-                                        <td>'.$mobilenumber.'</td>
-                                        <td>
-                                        <button class=""><a href="deletefunction.php?deleteid='.$id.'" class="button3 ice2 btn-danger"> Delete </a> </button>
-                                        </td>
-                                    </tr>
-                                    ';
-                                    $i++;
+                                    if($selectresult){
+                                        while($row1=mysqli_fetch_assoc($selectresult)){
+                                        $id=$row1['id'];
+                                        $idnumber1=$row1['idnumber'];
+                                        $surname=$row1['surname'];
+                                        $firstname=$row1['firstname'];
+                                        $occupation=$row1['occupation'];
+                                        $gender=$row1['gender'];
+                                        $countrycode=$row1['countrycode'];
+                                        $areacode=$row1['areacode'];
+                                        $mobilenumber=$row1['mobilenumber'];
+                                        echo '
+                                        <tr>
+                                            <th class="align-middle " scope="row">'.$idnumber1.'</th>
+                                            <td class="align-middle">'.$surname.'</td>
+                                            <td class="align-middle">'.$firstname.'</td>
+                                            <td class="align-middle">'.$occupation.'</td>
+                                            <td class="align-middle">'.$gender.'</td>
+                                            <td class="align-middle">'.$countrycode.'</td>
+                                            <td class="align-middle">'.$areacode.'</td>
+                                            <td class="align-middle">'.$mobilenumber.'</td>
+                                            <td class="align-middle">
+                                            <button"><a href="deletefunction.php?deleteid='.$id.'" class="button3 ice2 btn-danger"> Delete </a> </button>
+                                            </td>
+                                        </tr>
+                                        ';
+                                        $i++;
+                                        }
                                     }
+                                    else{
+                                        die(mysql_error($con));
+                                    }                                  
                                 }
                                 else{
-                                    die(mysql_error($con));
+                                    $sql1="Select * from  store";
+                                    $selectresult=mysqli_query($con, $sql1);
+                                    $i=1;
+                                    if($selectresult){
+                                        while($row1=mysqli_fetch_assoc($selectresult)){
+                                        $id=$row1['id'];
+                                        $idnumber1=$row1['idnumber'];
+                                        $surname=$row1['surname'];
+                                        $firstname=$row1['firstname'];
+                                        $occupation=$row1['occupation'];
+                                        $gender=$row1['gender'];
+                                        $countrycode=$row1['countrycode'];
+                                        $areacode=$row1['areacode'];
+                                        $mobilenumber=$row1['mobilenumber'];
+                                        echo '
+                                        <tr>
+                                            <th scope="row">'.$idnumber1.'</th>
+                                            <td>'.$surname.'</td>
+                                            <td>'.$firstname.'</td>
+                                            <td>'.$occupation.'</td>
+                                            <td>'.$gender.'</td>
+                                            <td>'.$countrycode.'</td>
+                                            <td>'.$areacode.'</td>
+                                            <td>'.$mobilenumber.'</td>
+                                            <td>
+                                            </td>
+                                        </tr>
+                                        ';
+                                        $i++;
+                                        }
+                                    }         
                                 }
-                                }
-                                else {
                             ?>
-                            <div class="errordelete">
-                                <i class="fa-solid fa-triangle-exclamation"><i> </i><label>ID NUMBER DOES NOT
-                                        EXIST</label></i>
-                            </div>
-                            <?php
-                                    }
-                                }
-                            ?>
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </form>
                 </div>
             </div>
         </div>
@@ -257,8 +273,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
-
-    <?php?><script>
+    <script>
     <?php include 'Script/tilt.jquery.min.js'; ?>
     </script>
     <script>
@@ -266,7 +281,6 @@
         scale: 1.1
     })
     </script>
-    </form>
 </body>
 
 

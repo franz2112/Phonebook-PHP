@@ -936,7 +936,7 @@ a:hover {
     float: right;
     padding-left: 30px;
     padding-right: 30px;
-    margin-top: 25px;
+    margin-top: 50px;
     border-radius: 20px;
 }
 
@@ -1016,7 +1016,9 @@ input[type=checkbox] {
     width: 100%;
     font-size: 12pt;
     font-weight: lighter;
-    padding: 50px;
+    padding-top: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .data-design th {
@@ -1031,8 +1033,8 @@ input[type=checkbox] {
     width: 100%;
     font-size: 12pt;
     font-weight: lighter;
-    padding: 50px;
-    margin-bottom: 300px;
+    padding-top: 50px;
+    margin-bottom: 200px;
 }
 
 .delete-data-design th {
@@ -1040,7 +1042,7 @@ input[type=checkbox] {
     font-size: 14pt;
 }
 
-form.SDbutton input[type=text] {
+.SDbutton input[type=text] {
     padding: 10px;
     font-size: 17px;
     border: 1px solid White;
@@ -1052,7 +1054,7 @@ form.SDbutton input[type=text] {
     border-bottom-left-radius: 5px;
 }
 
-form.SDbutton button {
+.SDbutton button {
     float: right;
     width: 70px;
     padding: 10px;
@@ -1064,7 +1066,7 @@ form.SDbutton button {
     cursor: pointer;
 }
 
-form.SDbutton button:hover {
+.SDbutton button:hover {
     background: rgb(255, 255, 255);
     color: #000;
 }

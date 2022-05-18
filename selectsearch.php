@@ -305,7 +305,7 @@ error_reporting(0);
 
                 <!-- Student Data -->
                 <div class="table-responsive data-design">
-                    <table class="table table text-white">
+                    <table class="table table text-white text-center">
                         <h1>Student Data</h1>
                         <thead>
                             <tr>

@@ -132,5 +132,9 @@ $(document).ready(function() {
     });
 });
 
-
+//delete confimation
+$('.confirmation').on('click', function() {
+    return confirm('Are you sure?');
+});
+//delete confimation
 //other modals
