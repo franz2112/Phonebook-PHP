@@ -37,6 +37,8 @@
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
+    <link rel="icon" href="img/icon.png" type="image/icon type">
+
     <script src="https://kit.fontawesome.com/6a478048bc.js" crossorigin="anonymous"></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -55,7 +57,7 @@
 
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
-    <title>Delete</title>
+    <title>Delete Main Page</title>
 
 </head>
 

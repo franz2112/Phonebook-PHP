@@ -67,6 +67,8 @@
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
+    <link rel="icon" href="img/icon.png" type="image/icon type">
+
     <script src="https://kit.fontawesome.com/6a478048bc.js" crossorigin="anonymous"></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -87,10 +89,10 @@
 </head>
 
 <body>
-    <!--VIDEO BG
+    <!--VIDEO BG-->
     <video autoplay muted loop class="myVideo">
         <source src="bg1.mp4" type="video/mp4">
-    </video>-->
+    </video>
     <!--End of Video BG-->
     <div class="container">
         <div class="sidebar">

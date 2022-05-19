@@ -134,7 +134,7 @@ $(document).ready(function() {
 
 //delete confimation
 $('.confirmation').on('click', function() {
-    return confirm('Are you sure?');
+    return confirm('Are you sure you want to Delete Data?');
 });
 
 //confim

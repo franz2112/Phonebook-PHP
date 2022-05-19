@@ -59,6 +59,8 @@
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
+    <link rel="icon" href="img/icon.png" type="image/icon type">
+
     <script src="https://kit.fontawesome.com/6a478048bc.js" crossorigin="anonymous"></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -75,7 +77,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Store</title>
+    <title>Store Main Page</title>
 </head>
 
 <body>
@@ -202,7 +204,7 @@
                         </div>
                         <div class="col-md-12">
                             <label class="form-label"> Mobile number </label>
-                            <input type="int" required="required" class="text-area" placeholder="Enter Mobile Number"
+                            <input type="varchar" required="required" class="text-area" placeholder="Enter Mobile Number (Avoid using Special Characters)"
                                 name="mobilenumber" maxlength="11">
                         </div>
                         <br>

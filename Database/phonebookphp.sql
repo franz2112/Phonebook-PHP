@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2022 at 05:07 AM
+-- Generation Time: May 18, 2022 at 04:51 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.28
 
@@ -56,15 +56,23 @@ CREATE TABLE `store` (
 --
 
 INSERT INTO `store` (`id`, `idnumber`, `surname`, `firstname`, `occupation`, `gender`, `countrycode`, `areacode`, `mobilenumber`) VALUES
-(1, '0211', 'Tuazon', ' Fritz', 'Web Developer', 'male', 63, 9506, '09105344829'),
-(2, '1', 'Tuna', 'Gil Jason', 'IT', 'male', 63, 9506, '091234567889'),
-(3, '2', 'Solmayor', 'Francis', 'IT', 'male', 62, 9506, '091234567889'),
-(4, '3', 'Paulo', 'Kernel', 'IT', 'male', 60, 9506, '091234567889'),
-(5, '4', 'Mahilum', 'Earl', 'IT', 'male', 63, 9506, '09105344829'),
-(6, '5', 'Esteves', 'Christian', 'IT', 'male', 60, 9506, '0973853495'),
-(7, '6', 'Panzo', 'Jasper', 'IT', 'male', 65, 9506, '091234567889'),
-(8, '7', 'Montilla', 'Regin', 'IT', 'male', 65, 9506, '091234567889'),
-(9, '8', 'Asumbra', 'Johhny', 'IT', 'male', 62, 9506, '09105344829');
+(16, '1', 'Solmayor', 'Francis', 'IT', 'male', 60, 11, '09387458236'),
+(17, '2', 'Mahilum', 'Earl', 'Police', 'male', 62, 22, '09803457983'),
+(18, '3', 'Montilla', 'Regin', 'Fireman', 'male', 63, 33, '09874357645'),
+(19, '4', 'Tuna', 'Gil', 'Chef', 'male', 65, 44, '09763475325'),
+(20, '5', 'Paulo', 'Kernel', 'Politician', 'male', 66, 55, '09982374923'),
+(21, '6', 'Esteves', 'Christian', 'IT', 'male', 84, 66, '09932845872'),
+(22, '7', 'Asumbra', 'Johny', 'IT', 'male', 673, 77, '09625134623'),
+(23, '8', 'Cristobal', 'Clyde', 'IT', 'male', 855, 88, '09723645673'),
+(24, '9', 'Emboltorio', 'Spencer', 'IT', 'male', 856, 99, '09847567343'),
+(25, '10', 'Catulong', 'Harvey', 'Police', 'male', 95, 101, '09375486283'),
+(26, '11', 'Passaporte', 'Emy', 'IT', 'female', 670, 111, '09836547676'),
+(27, '12', 'Gulle', 'Gwen', 'IT', 'female', 60, 121, '09192364763'),
+(28, '13', 'Sustiger', 'Zachery', 'Fireman', 'male', 62, 131, '09093786489'),
+(29, '14', 'Teker', 'James', 'Police', 'male', 63, 141, '09387468236'),
+(30, '15', 'Antenero', 'Marlou', 'IT', 'male', 65, 151, '09378264763'),
+(31, '16', 'Somogod', 'Ybonie', 'IT', 'male', 66, 161, '09913764876'),
+(34, '17', 'Tuazon', ' Fritz', 'IT', 'male', 63, 171, '09376487234');
 
 -- --------------------------------------------------------
 
@@ -115,7 +123,7 @@ ALTER TABLE `phonebook`
 -- AUTO_INCREMENT for table `store`
 --
 ALTER TABLE `store`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `users`

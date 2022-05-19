@@ -1,30 +1,6 @@
 <?php
 include 'Connect.php';
 error_reporting(0);
-// $select_query = "select * from store";
-// $result=mysqli_query($con,$select_query);
-// if (isset($_POST["surnamesubmit"])) {
-//         $surname = $_POST['surnamesearch'];
-//         $select_query = "select * from store where surname='$surname'";
-//         $result=mysqli_query($con,$select_query);
-//         if(mysqli_num_rows($result)>0){
-//             while ($row=mysqli_fetch_assoc($result)){
-//                 echo"<script>
-//                         $(document).ready(function(){
-//                         $('.view_data').click(function(){
-//                             $('#data_Modal').modal('show');
-//                         });
-//                         });
-//                     </script>";
-//             }
-//         }
-//         else{
-//             echo"<script>
-//                     alert('Surname not exist!')
-//                     window.open('selectsearch.php', '_self')
-//                 </script>";
-//         }
-//     }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,17 +31,19 @@ error_reporting(0);
     <!-- bootstraps -->
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="icon" href="img/icon.png" type="image/icon type">
     <!-- Boxicons CDN Link -->
-    <title>View Search</title>
+    <title>View Search Main Page</title>
 
 
 </head>
 
 <body style="background-color: #ffe2c9;">
-    <!--VIDEO BG
+    <!--VIDEO BG-->
     <video autoplay muted loop class="myVideo">
         <source src="bg1.mp4" type="video/mp4">
-    </video>-->
+    </video>
     <!--End of Video BG-->
     <div class="container">
         <div class="sidebar">
@@ -144,10 +122,13 @@ error_reporting(0);
                                         $sql = "SELECT * from `store` WHERE surname = '$surname'";
                                         $result = mysqli_query($con, $sql);
                                         $row = mysqli_fetch_assoc($result);
+                                                $idnumber        = $row['idnumber'];
                                                 $surname          = $row['surname'];
                                                 $firstname        = $row['firstname'];
                                                 $occupation       = $row['occupation'];
                                                 $mobilenumber     = $row['mobilenumber'];
+                                                $countrycode      = $row['countrycode'];
+                                                $areacode         = $row['areacode'];
                                         if($row){
                                           
                                     ?>
@@ -165,12 +146,18 @@ error_reporting(0);
                                         <div class="">
                                             <div class="col-lg-12">
                                                 <label class="">
-                                                    <span class="text-bold"><?php echo $firstname;?> </span>
-                                                    <span> <?php echo " ";?> </span>
                                                     <span class="text-bold"><?php echo $surname;?> </span>
+                                                    <span> <?php echo ", ";?> </span>
+                                                    <span class="text-bold"><?php echo $firstname;?> </span>
+                                                    <span> <?php echo ", with student number ";?> </span>
+                                                    <span class="text-bold"><?php echo $idnumber;?> </span>
                                                     <span> <?php echo " is a(n) ";?> </span>
                                                     <span class="text-bold"><?php echo $occupation;?> </span>
-                                                    <span> <?php echo ". His Mobile Number is ";?> </span>
+                                                    <span> <?php echo ". His Number is ";?> </span>
+                                                    <span class="text-bold"><?php echo $countrycode;?> </span>
+                                                    <span> <?php echo "-";?> </span>
+                                                    <span class="text-bold"><?php echo $areacode;?> </span>
+                                                    <span> <?php echo "-";?> </span>
                                                     <span class="text-bold"><?php echo $mobilenumber;?> </span>
                                                     <span> <?php echo ".";?> </span>
                                                 </label>
@@ -184,8 +171,7 @@ error_reporting(0);
                                     <div class="find-details">
                                         <div class="">
                                             <div class="col-lg-12">
-                                                <span class="text-bold"><?php $surname = $_POST['surnamesearch']; ?> Not
-                                                    Exist</span>
+                                                <span class="text-bold"><?php $surname = $_POST['surnamesearch']; ?> Surname Does not Exist</span>
                                             </div>
                                         </div>
                                     </div>
@@ -284,7 +270,7 @@ error_reporting(0);
                                     <div class="find-details">
                                         <div class="">
                                             <div class="col-lg-12">
-                                                <span class="text-bold"><?php echo ['surname']; ?> Not Exist</span>
+                                                <span class="text-bold"><?php echo ['surname']; ?>Not Exist</span>
                                             </div>
                                         </div>
                                     </div>

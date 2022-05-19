@@ -8,6 +8,9 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" href="img/icon.png" type="image/icon type">
+
 <style><?php include 'css/style.css'; ?></style>
 <style>
 

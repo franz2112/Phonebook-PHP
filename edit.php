@@ -37,6 +37,8 @@ error_reporting(0);
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <!-- Boxicons CDN Link -->
+    <link rel="icon" href="img/icon.png" type="image/icon type">
+    
 
     <title>Edit Main page</title>
 </head>
@@ -128,6 +130,8 @@ error_reporting(0);
                                     $surname          = $row['surname'];
                                     $occupation       = $row['occupation'];
                                     $mobilenumber     = $row['mobilenumber'];
+                                    $countrycode      = $row['countrycode'];
+                                    $areacode         = $row['areacode'];
 
                             if($row){
                         ?>
@@ -139,7 +143,6 @@ error_reporting(0);
                                     <span> <?php echo "(";?> </span>
                                     <span class="text-bold"><?php echo $idnumber; ?></span>
                                     <span> <?php echo ")";?> </span>
-                                    <hr>
                                 </label>
                             </div>
                             <div class="">
@@ -150,7 +153,11 @@ error_reporting(0);
                                         <span class="text-bold"><?php echo $surname;?> </span>
                                         <span> <?php echo " is a(n) ";?> </span>
                                         <span class="text-bold"><?php echo $occupation;?> </span>
-                                        <span> <?php echo ". His Mobile Number is ";?> </span>
+                                        <span> <?php echo ". His Number is ";?> </span>
+                                        <span class="text-bold"><?php echo $countrycode;?> </span>
+                                        <span> <?php echo "-";?> </span>
+                                        <span class="text-bold"><?php echo $areacode;?> </span>
+                                        <span> <?php echo "-";?> </span>
                                         <span class="text-bold"><?php echo $mobilenumber;?> </span>
                                         <span> <?php echo ".";?> </span>
                                     </label>
